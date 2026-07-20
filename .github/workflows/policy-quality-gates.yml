@@ -1,0 +1,51 @@
+name: Policy Quality Gates
+
+on:
+  pull_request:
+    branches: [main, master]
+  push:
+    branches: [main, master]
+
+  # 수동 트리거 (Actions 탭에서 직접 실행 가능)
+  workflow_dispatch:
+
+jobs:
+  quality-gates:
+    name: Policy Quality Gates
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run policy quality gates
+        id: gates
+        run: |
+          python scripts/run_policy_quality_gates.py
+        env:
+          PYTHONIOENCODING: utf-8
+
+      - name: Gate result summary
+        if: always()
+        run: |
+          echo "### Policy Quality Gates" >> $GITHUB_STEP_SUMMARY
+          if [ "${{ steps.gates.outcome }}" = "success" ]; then
+            echo "✅ QUALITY_GATES=PASS" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "❌ QUALITY_GATES=FAIL" >> $GITHUB_STEP_SUMMARY
+          fi
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Scenarios covered:**" >> $GITHUB_STEP_SUMMARY
+          echo "- report-only (empty allowlist)" >> $GITHUB_STEP_SUMMARY
+          echo "- networkBundle only" >> $GITHUB_STEP_SUMMARY
+          echo "- composite allowlist (vnet + nsg + routeTable)" >> $GITHUB_STEP_SUMMARY
+          echo "- invalid category → exit 2 gate" >> $GITHUB_STEP_SUMMARY

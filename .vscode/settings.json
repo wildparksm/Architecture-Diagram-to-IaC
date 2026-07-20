@@ -1,0 +1,53 @@
+{
+    "chat.tools.terminal.autoApprove": {
+        "/^Set-Location \"g:\\\\doc\\\\project\\\\Architecture Diagram to IaC\"; python -c \"from pathlib import Path; runs=sorted\\(\\[p\\.name for p in Path\\('runs'\\)\\.iterdir\\(\\) if p\\.is_dir\\(\\) and p\\.name\\.startswith\\('run-'\\)\\]\\); print\\(runs\\[-1\\]\\)\"$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "Get-PSDrive": true,
+        "Test-Path": true,
+        "/^Set-Location \"G:\\\\doc\\\\project\\\\Architecture Diagram to IaC\"; Get-Location; python src/run_pptx_evidence\\.py --input \"Architecture Diagram to IaC Compiler\\.pptx\"$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^Set-Location \"G:\\\\doc\\\\project\\\\Architecture Diagram to IaC\"; python -c \"from emitters\\.bicep_emitter import _emit_azure_resource; lines=\\[\\]; ok=_emit_azure_resource\\(lines, \\{'category':'azure\\.firewall','name':'Firewall'\\}, 0\\); print\\('ok',ok\\); print\\('\\\\n'\\.join\\(lines\\[:6\\]\\)\\);\"$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^Set-Location \"G:\\\\doc\\\\project\\\\Architecture Diagram to IaC\"; python -c \"import sys; sys\\.path\\.insert\\(0,'src'\\); from emitters\\.bicep_emitter import _emit_azure_resource; lines=\\[\\]; ok=_emit_azure_resource\\(lines, \\{'category':'azure\\.firewall','name':'Firewall'\\}, 0\\); print\\('ok',ok\\); print\\('\\\\n'\\.join\\(lines\\[:12\\]\\)\\);\"$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^Set-Location \"G:\\\\doc\\\\project\\\\Architecture Diagram to IaC\"; python -c \"from pathlib import Path; p=Path\\('src/emitters/bicep_emitter\\.py'\\); lines=p\\.read_text\\(encoding='utf-8'\\)\\.splitlines\\(\\);\nfor i in range\\(80, 110\\):\n    print\\(f'\\{i\\+1:4\\}: \\{lines\\[i\\]!r\\}'\\)\"$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^Set-Location \"G:\\\\doc\\\\project\\\\Architecture Diagram to IaC\"; python -c \"import sys; sys\\.path\\.insert\\(0,'src'\\); from emitters\\.bicep_emitter import _emit_azure_resource; lines=\\[\\]; ok=_emit_azure_resource\\(lines, \\{'category':'azure\\.firewall','name':'Firewall'\\}, 0\\); print\\('ok',ok\\); print\\(lines\\[0\\]\\); print\\(lines\\[10\\]\\);\"$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^Set-Location \"G:\\\\doc\\\\project\\\\Architecture Diagram to IaC\"; python src/run_pptx_evidence\\.py --input \"Architecture Diagram to IaC Compiler\\.pptx\"$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "print(src[:420])": true,
+        "src[:420]": true,
+        "/^Set-Location \"G:\\\\doc\\\\project\\\\Architecture Diagram to IaC\"; python -c \"import sys,inspect; sys\\.path\\.insert\\(0,'src'\\); import emitters\\.bicep_emitter as m; print\\(m\\.__file__\\); src=inspect\\.getsource\\(m\\._emit_azure_resource\\); print\\('has_azure_firewall', 'azure\\.firewall' in src\\); print\\(src\\[:500\\]\\)\"$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^Set-Location \"G:\\\\doc\\\\project\\\\Architecture Diagram to IaC\"; python -c \"from pathlib import Path; text=Path\\('src/emitters/bicep_emitter\\.py'\\)\\.read_text\\(encoding='utf-8'\\); print\\('firewall_tokens', text\\.count\\('azure\\.firewall'\\)\\); print\\('first_index', text\\.find\\('azure\\.firewall'\\)\\); print\\(text\\[text\\.find\\('azure\\.firewall'\\)-80:text\\.find\\('azure\\.firewall'\\)\\+120\\]\\)\"$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "print('firewallPolicies',": true,
+        "/^Set-Location \"G:\\\\doc\\\\project\\\\Architecture Diagram to IaC\"; python -c \"from pathlib import Path; lines=Path\\('src/emitters/bicep_emitter\\.py'\\)\\.read_text\\(encoding='utf-8'\\)\\.splitlines\\(\\);\nfor i in range\\(70, 130\\):\n    print\\(f'\\{i\\+1:4\\}: \\{lines\\[i\\]\\}'\\)\"$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^Set-Location \"G:\\\\doc\\\\project\\\\Architecture Diagram to IaC\"; python -c \"from pathlib import Path; lines=Path\\('src/emitters/bicep_emitter\\.py'\\)\\.read_text\\(encoding='utf-8'\\)\\.splitlines\\(\\);\nfor i in range\\(88, 140\\):\n    print\\(f'\\{i\\+1:4\\}: \\{lines\\[i\\]\\}'\\)\"$/": {
+            "approve": true,
+            "matchCommandLine": true
+        }
+    }
+}

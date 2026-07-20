@@ -1,0 +1,63 @@
+{
+  "version": "architecture-graph/0.1.0",
+  "nodes": [
+    {
+      "id": "ev-261dfa7e00b5d765",
+      "label": "Web",
+      "page": "mxGraphModel",
+      "objectId": "2",
+      "confidence": {
+        "existence": 1.0,
+        "text": 0.9,
+        "classification": 0.2,
+        "containment": 0.5,
+        "connectivity": 0.3,
+        "deployability": 0.2
+      },
+      "evidenceId": "ev-261dfa7e00b5d765"
+    },
+    {
+      "id": "ev-7e75f86bfe7444c4",
+      "label": "DB",
+      "page": "mxGraphModel",
+      "objectId": "3",
+      "confidence": {
+        "existence": 1.0,
+        "text": 0.9,
+        "classification": 0.2,
+        "containment": 0.5,
+        "connectivity": 0.3,
+        "deployability": 0.2
+      },
+      "evidenceId": "ev-7e75f86bfe7444c4"
+    }
+  ],
+  "edges": [
+    {
+      "id": "ev-d251a875e566d6df",
+      "from": "ev-261dfa7e00b5d765",
+      "to": "ev-7e75f86bfe7444c4",
+      "page": "mxGraphModel",
+      "evidenceId": "ev-d251a875e566d6df",
+      "resolution": {
+        "method": "endpoint_proximity_and_layout_direction",
+        "directionMethod": "layout_left_to_right",
+        "ambiguityPenalty": 0.0,
+        "distanceA": 0.0,
+        "distanceB": 0.0,
+        "arrowHint": false
+      },
+      "confidence": 0.2
+    }
+  ],
+  "zones": [],
+  "securityControls": [],
+  "questions": [
+    {
+      "type": "Risk",
+      "code": "LOW_EDGE_CONFIDENCE",
+      "connector": "ev-d251a875e566d6df",
+      "message": "Connector endpoint resolution has low confidence and needs review."
+    }
+  ]
+}

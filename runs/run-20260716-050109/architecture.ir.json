@@ -1,0 +1,4162 @@
+{
+  "version": "architecture-ir/0.1.0",
+  "providerNeutralCore": {
+    "resources": [
+      {
+        "id": "ev-d75715e51f99c0a2",
+        "name": "\uc2ac\ub77c\uc774\ub4dc\u00b7\uad6c\uc131\ub3c4 \ubd84\uc11d \uae30\ubc18 Azure Bicep\u00b7Terraform \uc790\ub3d9 \uc0dd\uc131 \ud50c\ub7ab\ud3fc \uae30\ud68d",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-d75715e51f99c0a2"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-92c04b84fb3bb8b3",
+        "name": "\uc6d0\ubcf8 \uad6c\uc870 \uc815\ubcf4",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-92c04b84fb3bb8b3"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-4695597240ee5ba1",
+        "name": "\uc774\ubbf8\uc9c0 \uc778\uc2dd",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-4695597240ee5ba1"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-b2158c5943c148b1",
+        "name": "text \u00b7 label",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-b2158c5943c148b1"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-b3c2cf21a8d93962",
+        "name": "\uc544\uc774\ucf58 \ub9e4\uce6d",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-b3c2cf21a8d93962"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-119cf002bb775092",
+        "name": "Azure resource",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-119cf002bb775092"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-6b2d425c8eb1e9b1",
+        "name": "LLM Reasoning",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-6b2d425c8eb1e9b1"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-702ad9ca95500d26",
+        "name": "IaC Generator",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-702ad9ca95500d26"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-45a98f96cdedf75a",
+        "name": "Validation / What-if",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-45a98f96cdedf75a"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-10f715d534504b3f",
+        "name": "OUTPUTS",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-10f715d534504b3f"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-a9cc395f52156f2a",
+        "name": "Bicep",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-a9cc395f52156f2a"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-251cc5e33f8e50bb",
+        "name": "Terraform",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-251cc5e33f8e50bb"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-053364081ccf1d13",
+        "name": "Missing Questions",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-053364081ccf1d13"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-79b5d0e5cc3a93f7",
+        "name": "Azure \uc544\uc774\ucf58 \ud6c4\ubcf4 \uac80\uc99d | \ub9ac\uc18c\uc2a4 \ub9e4\uce6d \ud655\uc778",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-79b5d0e5cc3a93f7"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-7cbc88cd96c6a8ed",
+        "name": "VLM | Reconciliation",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-7cbc88cd96c6a8ed"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-ebbd478b8f7a2849",
+        "name": "Editable source \uae30\ubc18 \ubd84\uc11d",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-ebbd478b8f7a2849"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-703d62295cf7cc42",
+        "name": "Document layout parsing",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-703d62295cf7cc42"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-371cf735f0d1f61e",
+        "name": "UI-to-code / sketch-to-code",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-371cf735f0d1f61e"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-b550797d7c7cf799",
+        "name": "Chart / figure parsing",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-b550797d7c7cf799"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-4879959b8399fcc7",
+        "name": "PowerPoint Shape Parser",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-4879959b8399fcc7"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-f4a3c9b59e4060ac",
+        "name": "Azure Icon Classifier",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-f4a3c9b59e4060ac"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-bf1cbc4cca912816",
+        "name": "Connector / Arrow Resolver",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-bf1cbc4cca912816"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-7d6361efec9a0ed3",
+        "name": "element.json",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-7d6361efec9a0ed3"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-c0d2dcc80aa4e1e2",
+        "name": "\"Azure resource candidate\" | : | \ud6c4\ubcf4 \ub9ac\uc18c\uc2a4",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-c0d2dcc80aa4e1e2"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-ff16e87167a68542",
+        "name": "Single Source of Truth",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-ff16e87167a68542"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-456a213bf779bbdd",
+        "name": "\uc2e0\ub8b0\ub3c4 \uae30\ubc18 \ubcd1\ud569",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-456a213bf779bbdd"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-edb12f04880cef96",
+        "name": "\ub2e4\uc6b4\uc2a4\ud2b8\ub9bc \uc785\ub825",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-edb12f04880cef96"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-9c8383ad9b883859",
+        "name": "\uad6c\uc131\ub3c4\ub97c Architecture Graph\ub85c \ubcf5\uc6d0",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-9c8383ad9b883859"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-36df4f429cc96d31",
+        "name": "\ub3c4\ud615 (Shape)",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-36df4f429cc96d31"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-8f5783ea5eabe30d",
+        "name": "Node",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-8f5783ea5eabe30d"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-98e0e283f1a7dfd9",
+        "name": "\uc5f0\uacb0\uc120 (Arrow)",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-98e0e283f1a7dfd9"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-bd9b11db69e33bc6",
+        "name": "Edge",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-bd9b11db69e33bc6"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-252adf72f29e851c",
+        "name": "\uc601\uc5ed \ubc15\uc2a4 (Boundary)",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-252adf72f29e851c"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-13e6fc7f538e633a",
+        "name": "Container",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-13e6fc7f538e633a"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-24f9a834a2a6c7c9",
+        "name": "\uc0c9\uc0c1 / \uc120 \uc2a4\ud0c0\uc77c",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-24f9a834a2a6c7c9"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-3ac498c28c1f130a",
+        "name": "\uc704\uce58 \uad00\uacc4",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-3ac498c28c1f130a"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-7f1bb22df6519323",
+        "name": "Dependency Hint",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-7f1bb22df6519323"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-dde102cd4860b80f",
+        "name": "Legend",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-dde102cd4860b80f"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-3d1423ae0aa780ad",
+        "name": "Flow Meaning",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-3d1423ae0aa780ad"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-9d0b75493d173ac7",
+        "name": "\uc608\uc2dc \uad00\uacc4 \ud750\ub984",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-9d0b75493d173ac7"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-e06acf93a87273a7",
+        "name": "External User",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-e06acf93a87273a7"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-1655c34933c2ccb6",
+        "name": "Conditional Access",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-1655c34933c2ccb6"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-948ca6ea0657d643",
+        "name": "AVD Service",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-948ca6ea0657d643"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-aa849a22fd1d9541",
+        "name": "Host Pool",
+        "category": "azure.avdHostPool",
+        "provider": "azure",
+        "deployability": "PARTIAL_IAC",
+        "evidenceLinks": [
+          "ev-aa849a22fd1d9541"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-5b256cbfbe787bb7",
+        "name": "Firewall",
+        "category": "azure.firewall",
+        "provider": "azure",
+        "deployability": "PARTIAL_IAC",
+        "evidenceLinks": [
+          "ev-5b256cbfbe787bb7"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-8654ecc43951369e",
+        "name": "Internal Servers",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-8654ecc43951369e"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-93740da57a80363a",
+        "name": "architecture.ir.json",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-93740da57a80363a"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-b13d537187a4dc25",
+        "name": "resources",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-b13d537187a4dc25"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-44140de6a223b2bf",
+        "name": "relationships",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-44140de6a223b2bf"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-0837f3898a49ad29",
+        "name": "containers",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-0837f3898a49ad29"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-821460e9de454f2d",
+        "name": "securityControls",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-821460e9de454f2d"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-82d85fa612e2fdb6",
+        "name": "existingResources",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-82d85fa612e2fdb6"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-5c9af2a83b96bb8c",
+        "name": "manualControls",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-5c9af2a83b96bb8c"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-0a6e65bd1aba5a2e",
+        "name": "questions",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-0a6e65bd1aba5a2e"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-e0e982e9391554f9",
+        "name": "warnings",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-e0e982e9391554f9"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-8b2a191ef49951e2",
+        "name": "confidence score",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-8b2a191ef49951e2"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-7e86359723801c12",
+        "name": "Bicep",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-7e86359723801c12"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-568c69eb3b9dabfa",
+        "name": "Azure \ub124\uc774\ud2f0\ube0c IaC",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-568c69eb3b9dabfa"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-3097478da374711f",
+        "name": "Terraform",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-3097478da374711f"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-0ca0b9b299dc3a46",
+        "name": "\uba40\ud2f0 \ud074\ub77c\uc6b0\ub4dc IaC",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-0ca0b9b299dc3a46"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-8f4945a687a94ed5",
+        "name": "Blocker",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-8f4945a687a94ed5"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-3407d9f53682c433",
+        "name": "\uc5c6\uc73c\uba74 \ucf54\ub4dc \uc0dd\uc131 \ubd88\uac00",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-3407d9f53682c433"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-dda565101ad953a3",
+        "name": "Risk",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-dda565101ad953a3"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-068beb5249fce997",
+        "name": "\uae30\ubcf8\uac12 \uac00\ub2a5\ud558\ub098 \uac80\ud1a0 \ud544\uc694",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-068beb5249fce997"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-1088103f947f508e",
+        "name": "Optional",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-1088103f947f508e"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-76dd92bf8b431a6d",
+        "name": "\ud488\uc9c8 \uac1c\uc120\uc6a9",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-76dd92bf8b431a6d"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-92d28b098e83c509",
+        "name": "Manual Control",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-92d28b098e83c509"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-e1bf92b85bc6d306",
+        "name": "\uc608\uc2dc \uc9c8\ubb38",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-e1bf92b85bc6d306"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-37a9f0216c77fa60",
+        "name": "Architecture | IR",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-37a9f0216c77fa60"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-df94997259438d79",
+        "name": "IR \u2192 Bicep emitter",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-df94997259438d79"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-eacb18d3c19d095c",
+        "name": "Raw Bicep\uc73c\ub85c \uc2dc\uc791 \ud6c4 AVM \ubaa8\ub4c8 \uae30\ubc18\uc73c\ub85c \ud655\uc7a5 | Azure \ub124\uc774\ud2f0\ube0c \ubc30\ud3ec\uc5d0 \ucd5c\uc801\ud654",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-eacb18d3c19d095c"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-9dc00639269eca70",
+        "name": "IR \u2192 Terraform emitter",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-9dc00639269eca70"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-db09fc58b82d62c8",
+        "name": "\uad6c\uc131\ub3c4 \uc0c1\uc138 \uc815\uc758\uc11c",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-db09fc58b82d62c8"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-ae73c20fc5c85a32",
+        "name": "\uc591\ubc29\ud5a5 \ucd94\uc801\uc131 (Traceability)",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-ae73c20fc5c85a32"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-ef235c7f4643730e",
+        "name": "\ud45c\uc900 Report \ud615\uc2dd \ub0b4\ubcf4\ub0b4\uae30",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-ef235c7f4643730e"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-fcd89a6d6476c37b",
+        "name": "architecture-spec.md",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-fcd89a6d6476c37b"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-a988077c986ba2e4",
+        "name": "architecture-spec.docx",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-a988077c986ba2e4"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-701c36826192c86f",
+        "name": "architecture-spec.pdf",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-701c36826192c86f"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-28df8267b486880b",
+        "name": "Bicep \uac80\uc99d",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-28df8267b486880b"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-b1d25e8f9922d710",
+        "name": "bicep format",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-b1d25e8f9922d710"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-be5664a1e4ab8a34",
+        "name": "bicep lint",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-be5664a1e4ab8a34"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-8fc4a1ffcee7e24e",
+        "name": "bicep build",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-8fc4a1ffcee7e24e"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-949fc8d3aa6d8702",
+        "name": "az deployment validate",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-949fc8d3aa6d8702"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-a8ec92c41556d6a9",
+        "name": "az deployment what-if",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-a8ec92c41556d6a9"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-4aa2919b6d82f922",
+        "name": "Terraform \uac80\uc99d",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-4aa2919b6d82f922"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-bac1e199ccc4398f",
+        "name": "terraform fmt",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-bac1e199ccc4398f"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-b75a4eb42622293b",
+        "name": "terraform validate",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-b75a4eb42622293b"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-656e0263d41e5755",
+        "name": "tflint",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-656e0263d41e5755"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-9b82d0aa671bb665",
+        "name": "terraform plan",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-9b82d0aa671bb665"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-f04e23744c15bfa5",
+        "name": "validation-report.md",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-f04e23744c15bfa5"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-ca73c9998b44abad",
+        "name": "unresolved-questions.md",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-ca73c9998b44abad"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-8ce585c0a1ee573d",
+        "name": "deployment-plan.md",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-8ce585c0a1ee573d"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-f383eb5a70c19f0f",
+        "name": "\ud604\uc2e4\uc801\uc778 1\ucc28 MVP",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-f383eb5a70c19f0f"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-603454d62d891b8a",
+        "name": "PNG (\ubcf4\uc870)",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-603454d62d891b8a"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-05393605497f67e6",
+        "name": "\uc9c0\uc6d0 \ub9ac\uc18c\uc2a4",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-05393605497f67e6"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-02fdb31d47505068",
+        "name": "Resource Group",
+        "category": "azure.resourceGroup",
+        "provider": "azure",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-02fdb31d47505068"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-157969f9c79ce1e4",
+        "name": "VNet / Subnet / NSG / Route Table",
+        "category": "azure.networkBundle",
+        "provider": "azure",
+        "deployability": "PARTIAL_IAC",
+        "evidenceLinks": [
+          "ev-157969f9c79ce1e4"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-a8bb94e2f1ff0da5",
+        "name": "Azure Firewall",
+        "category": "azure.firewall",
+        "provider": "azure",
+        "deployability": "PARTIAL_IAC",
+        "evidenceLinks": [
+          "ev-a8bb94e2f1ff0da5"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-99ebe722c1ed7ff9",
+        "name": "AVD Workspace / Host Pool / App Group",
+        "category": "azure.avdBundle",
+        "provider": "azure",
+        "deployability": "PARTIAL_IAC",
+        "evidenceLinks": [
+          "ev-99ebe722c1ed7ff9"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-872c8b50ea71db02",
+        "name": "Log Analytics / Diagnostic Settings",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-872c8b50ea71db02"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-80f090052a105705",
+        "name": "architecture.ir.json",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-80f090052a105705"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-baab45d89a312a81",
+        "name": "detected-elements.csv",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-baab45d89a312a81"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-9a8ab69f9426cdbd",
+        "name": "iac-readiness-report.md",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-9a8ab69f9426cdbd"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-cd3754d63177df63",
+        "name": "main.bicep",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-cd3754d63177df63"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-4a632d5f73a5efc8",
+        "name": "validation-report.md",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-4a632d5f73a5efc8"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-b72eee3125d23ba6",
+        "name": "\ub2e8\uacc4\ubcc4 \ud655\uc7a5 \ub85c\ub4dc\ub9f5",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-b72eee3125d23ba6"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-b01a59642b45ff2d",
+        "name": "Phase 1",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-b01a59642b45ff2d"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-4952abc4b205dfc0",
+        "name": "Phase 2",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-4952abc4b205dfc0"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-b0613666adf2a906",
+        "name": "Phase 3",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-b0613666adf2a906"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-41d7f059e1a75144",
+        "name": "Bicep Generator",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-41d7f059e1a75144"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-f6649a9e6be1efcb",
+        "name": "Phase 4",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-f6649a9e6be1efcb"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-dda2e00fdc953ab3",
+        "name": "Validation & What-if",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-dda2e00fdc953ab3"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-514696209c5b20af",
+        "name": "Phase 5",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-514696209c5b20af"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-fbe0c871caaaba03",
+        "name": "Terraform Generator",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-fbe0c871caaaba03"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-90c32e05753fc69e",
+        "name": "Phase 6",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-90c32e05753fc69e"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-05deff7ed6b11209",
+        "name": "Phase 7",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-05deff7ed6b11209"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-0fb007f65c197bc3",
+        "name": "GitHub Actions / Azure DevOps PR \uc790\ub3d9\ud654",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-0fb007f65c197bc3"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-43615029073ebf9a",
+        "name": "IaC | Generator",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-43615029073ebf9a"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      },
+      {
+        "id": "ev-a9a95e62cb7c4a93",
+        "name": "Validation | Automation",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-a9a95e62cb7c4a93"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.95,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "id": "ev-f294fc68ec30c8a6",
+        "from": "ev-e7bbd27415313083",
+        "to": "ev-f37f516dcc2283f7",
+        "kind": "dependency",
+        "evidenceLinks": [
+          "ev-f294fc68ec30c8a6"
+        ],
+        "confidence": 0.2
+      },
+      {
+        "id": "ev-6907beb8ef5e2047",
+        "from": "ev-d75715e51f99c0a2",
+        "to": "ev-bfd5f1f4d71ab858",
+        "kind": "dependency",
+        "evidenceLinks": [
+          "ev-6907beb8ef5e2047"
+        ],
+        "confidence": 0.35323852407399053
+      },
+      {
+        "id": "ev-8dcb1b0897f09e14",
+        "from": "ev-de7160a40eb9223f",
+        "to": "ev-5fc729aa7775f648",
+        "kind": "dependency",
+        "evidenceLinks": [
+          "ev-8dcb1b0897f09e14"
+        ],
+        "confidence": 0.3663160960314341
+      },
+      {
+        "id": "ev-77c3cc49a7491253",
+        "from": "ev-1dc24dbc285f24c0",
+        "to": "ev-9b9c59e7d5f40a9c",
+        "kind": "dependency",
+        "evidenceLinks": [
+          "ev-77c3cc49a7491253"
+        ],
+        "confidence": 0.3663160960314341
+      },
+      {
+        "id": "ev-3db259741211d84f",
+        "from": "ev-43d26d357ccb054b",
+        "to": "ev-22f7448237e4d4c8",
+        "kind": "dependency",
+        "evidenceLinks": [
+          "ev-3db259741211d84f"
+        ],
+        "confidence": 0.3663160960314341
+      },
+      {
+        "id": "ev-959b0ba5386a4a38",
+        "from": "ev-22f7448237e4d4c8",
+        "to": "ev-89d21ce030230074",
+        "kind": "dependency",
+        "evidenceLinks": [
+          "ev-959b0ba5386a4a38"
+        ],
+        "confidence": 0.3663160960314341
+      },
+      {
+        "id": "ev-8c6ff4142e381624",
+        "from": "ev-5149950fac6a6cbe",
+        "to": "ev-a9789bf0b61362cc",
+        "kind": "dependency",
+        "evidenceLinks": [
+          "ev-8c6ff4142e381624"
+        ],
+        "confidence": 0.3663160960314341
+      },
+      {
+        "id": "ev-b36e6b94371dde32",
+        "from": "ev-97dd4242e290ade5",
+        "to": "ev-b601b4a18aff5358",
+        "kind": "dependency",
+        "evidenceLinks": [
+          "ev-b36e6b94371dde32"
+        ],
+        "confidence": 0.5579617582533044
+      },
+      {
+        "id": "ev-0dc9d5f8e42a0c50",
+        "from": "ev-ae0b0374064523e0",
+        "to": "ev-38fbb44d8b75b83c",
+        "kind": "dependency",
+        "evidenceLinks": [
+          "ev-0dc9d5f8e42a0c50"
+        ],
+        "confidence": 0.2
+      },
+      {
+        "id": "ev-d3f2336541638193",
+        "from": "ev-38fbb44d8b75b83c",
+        "to": "ev-7cbc88cd96c6a8ed",
+        "kind": "dependency",
+        "evidenceLinks": [
+          "ev-d3f2336541638193"
+        ],
+        "confidence": 0.2
+      },
+      {
+        "id": "ev-479fc7cd3ac042eb",
+        "from": "ev-38fbb44d8b75b83c",
+        "to": "ev-7cbc88cd96c6a8ed",
+        "kind": "dependency",
+        "evidenceLinks": [
+          "ev-479fc7cd3ac042eb"
+        ],
+        "confidence": 0.2053559076614788
+      },
+      {
+        "id": "ev-af400eeedec84811",
+        "from": "ev-38fbb44d8b75b83c",
+        "to": "ev-7cbc88cd96c6a8ed",
+        "kind": "dependency",
+        "evidenceLinks": [
+          "ev-af400eeedec84811"
+        ],
+        "confidence": 0.20577068052690742
+      },
+      {
+        "id": "ev-a740bc3b6ba68e82",
+        "from": "ev-4b70d44e2235fc34",
+        "to": "ev-8f5783ea5eabe30d",
+        "kind": "dependency",
+        "evidenceLinks": [
+          "ev-a740bc3b6ba68e82"
+        ],
+        "confidence": 0.5817273217369098
+      },
+      {
+        "id": "ev-24ecb66426564988",
+        "from": "ev-4c4a04841ff0c53f",
+        "to": "ev-bd9b11db69e33bc6",
+        "kind": "dependency",
+        "evidenceLinks": [
+          "ev-24ecb66426564988"
+        ],
+        "confidence": 0.5817270700067306
+      },
+      {
+        "id": "ev-f40f4abbe413efe7",
+        "from": "ev-d99023addee30b43",
+        "to": "ev-05b5c858c3d0b17e",
+        "kind": "dependency",
+        "evidenceLinks": [
+          "ev-f40f4abbe413efe7"
+        ],
+        "confidence": 0.60748365418754
+      },
+      {
+        "id": "ev-1da45ba0d9af2176",
+        "from": "ev-123037a38e0505fe",
+        "to": "ev-de30f80af95ac432",
+        "kind": "dependency",
+        "evidenceLinks": [
+          "ev-1da45ba0d9af2176"
+        ],
+        "confidence": 0.5817273217369098
+      },
+      {
+        "id": "ev-867f0dccc910a4c8",
+        "from": "ev-f941c11b12b684f2",
+        "to": "ev-7f1bb22df6519323",
+        "kind": "dependency",
+        "evidenceLinks": [
+          "ev-867f0dccc910a4c8"
+        ],
+        "confidence": 0.5817270700067306
+      },
+      {
+        "id": "ev-1a874d0e8072d169",
+        "from": "ev-4b5b5383ee0ff7cf",
+        "to": "ev-3d1423ae0aa780ad",
+        "kind": "dependency",
+        "evidenceLinks": [
+          "ev-1a874d0e8072d169"
+        ],
+        "confidence": 0.5817273217369098
+      },
+      {
+        "id": "ev-c3867fe44d1aeabc",
+        "from": "ev-859278d797dd8b9e",
+        "to": "ev-e7fc89e9b02929f8",
+        "kind": "dependency",
+        "evidenceLinks": [
+          "ev-c3867fe44d1aeabc"
+        ],
+        "confidence": 0.3564747469900148
+      },
+      {
+        "id": "ev-082231873dc88dc7",
+        "from": "ev-1e4af984ab71abd2",
+        "to": "ev-1655c34933c2ccb6",
+        "kind": "dependency",
+        "evidenceLinks": [
+          "ev-082231873dc88dc7"
+        ],
+        "confidence": 0.2836401774849323
+      },
+      {
+        "id": "ev-c0727de664f6cf8f",
+        "from": "ev-9d0b75493d173ac7",
+        "to": "ev-29fc7ca9e431f666",
+        "kind": "dependency",
+        "evidenceLinks": [
+          "ev-c0727de664f6cf8f"
+        ],
+        "confidence": 0.33912872560284757
+      },
+      {
+        "id": "ev-8b39a031bbe62368",
+        "from": "ev-29fc7ca9e431f666",
+        "to": "ev-aa849a22fd1d9541",
+        "kind": "dependency",
+        "evidenceLinks": [
+          "ev-8b39a031bbe62368"
+        ],
+        "confidence": 0.2836401774849323
+      },
+      {
+        "id": "ev-f429a72e8eca1f88",
+        "from": "ev-c90e96c65895fdd5",
+        "to": "ev-5b256cbfbe787bb7",
+        "kind": "dependency",
+        "evidenceLinks": [
+          "ev-f429a72e8eca1f88"
+        ],
+        "confidence": 0.2836401774849323
+      },
+      {
+        "id": "ev-3d0d79f11cd2b7b6",
+        "from": "ev-eb721934a01f4f4f",
+        "to": "ev-eddfa49f2eafa1e7",
+        "kind": "dependency",
+        "evidenceLinks": [
+          "ev-3d0d79f11cd2b7b6"
+        ],
+        "confidence": 0.3885902994134404
+      },
+      {
+        "id": "ev-5bb11a2e11d270ce",
+        "from": "ev-eb721934a01f4f4f",
+        "to": "ev-eddfa49f2eafa1e7",
+        "kind": "dependency",
+        "evidenceLinks": [
+          "ev-5bb11a2e11d270ce"
+        ],
+        "confidence": 0.3885902994134404
+      },
+      {
+        "id": "ev-5bad7f7ef6cd3930",
+        "from": "ev-8fbf6b636a815cc5",
+        "to": "ev-c8e817f3f3d789d5",
+        "kind": "dependency",
+        "evidenceLinks": [
+          "ev-5bad7f7ef6cd3930"
+        ],
+        "confidence": 0.2
+      },
+      {
+        "id": "ev-5d4c00419ae49ce1",
+        "from": "ev-df138c2af0c0e84e",
+        "to": "ev-8cb0a940b44260b1",
+        "kind": "dependency",
+        "evidenceLinks": [
+          "ev-5d4c00419ae49ce1"
+        ],
+        "confidence": 0.36357297924194476
+      },
+      {
+        "id": "ev-25bd4b4d2a4e1c99",
+        "from": "ev-2d4208019a76dc43",
+        "to": "ev-a0fbc24de90b45fd",
+        "kind": "dependency",
+        "evidenceLinks": [
+          "ev-25bd4b4d2a4e1c99"
+        ],
+        "confidence": 0.2
+      },
+      {
+        "id": "ev-da07ce01adb8c289",
+        "from": "ev-6158e67a8a72f337",
+        "to": "ev-45ca70e28afbc673",
+        "kind": "dependency",
+        "evidenceLinks": [
+          "ev-da07ce01adb8c289"
+        ],
+        "confidence": 0.3387292667302106
+      },
+      {
+        "id": "ev-c17d9f9628a0f18a",
+        "from": "ev-45ca70e28afbc673",
+        "to": "ev-937c678a5bd004a4",
+        "kind": "dependency",
+        "evidenceLinks": [
+          "ev-c17d9f9628a0f18a"
+        ],
+        "confidence": 0.23934640672492843
+      },
+      {
+        "id": "ev-fce3fbb1885ef8f9",
+        "from": "ev-9d5d1161466e3a8a",
+        "to": "ev-487ca8cc3dc21c5b",
+        "kind": "dependency",
+        "evidenceLinks": [
+          "ev-fce3fbb1885ef8f9"
+        ],
+        "confidence": 0.3387293336710614
+      }
+    ],
+    "containers": [],
+    "securityControls": [],
+    "existingResources": [],
+    "manualControls": [],
+    "assumptions": [],
+    "questions": [
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-e2a4c88a41c47cf9",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-ed92313deac11960",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-e7bbd27415313083",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-80832789e09e270c",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-cb1db3b6c4035827",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-ddfc1d3819167850",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-e72bc9edb9af42b3",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-d67160c27a1e5e26",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-64992b0d5c04e2c9",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-38f995ea5e930b70",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-26ca855c0710855f",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-d1d57a724b74e884",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-9eae2f6830dd99c5",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-efee66efc49fb67e",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-ebf2d9712bd32072",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-40f89bcd2411726c",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-57189195dd5474b6",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-d3e874c846e26415",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-be0a3dd925fab1bf",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-bd16cd0253e1e725",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-2a528764790c507e",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-5d0e3ff5036f256b",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-ac8abae6dec74b96",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-7dd0da1dfbb4cc0b",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-52e6cba79e5bd038",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-c2a65cb837657938",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-0fbe96882bce661d",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-97dd4242e290ade5",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-0c73324d378d4747",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-de7160a40eb9223f",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-1dc24dbc285f24c0",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-86f2aa8abe74e4ed",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-22f7448237e4d4c8",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-5149950fac6a6cbe",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-516e77d45158cbfc",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-1b4db8aa98fa02e9",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-94af7ef7e28faebc",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-578ae614d29a5aaa",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-ca9b20ad9698e4a4",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-e90625f48d321c5f",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-c1a8ba179fdd963d",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-ae0b0374064523e0",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-fbde41f8883158a5",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-b98eaa1279601d5b",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-753285ede1f31d1e",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-88df3c0b350c460d",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-533902aa8fdb3800",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-527a5a983bd083ef",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-8c0c6b8c649f7a2c",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-72895c21330f19b4",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-808d6bce36389382",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-957708e8d6c3348a",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-4f36d5dff4e18da5",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-bd6caefdc037b3c0",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-f40f6c83f72d09f2",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-38fbb44d8b75b83c",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-1ef91e1a18ac9006",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-4d866af59abba1cb",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-7cc2094f7d3eecb3",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-8ff3bd86606ac63b",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-8f6d3ac82f23d582",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-2210a15d0c2d50aa",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-1b819653cc02bd8d",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-698af446e2a23798",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-41d94442143ba22d",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-4e5992288f0e3eea",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-4b18a3b9b998f0b4",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-d2e6ab25a61293a8",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-f7851b62d4ae6c53",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-c45f2e34161fa672",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-e0ebb65742e48994",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-f407750e4d4ee510",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-247988984a3314a2",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-974586519e951bb7",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-aa917340c71f880d",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-8f0f4b6733b437d5",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-ca921a4bc0a659cf",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-5c073f623d20f84e",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-a6a31427400a7363",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-27cc418b4ceb9fea",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-4ccdd5c4b5b3737f",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-40610dc65e3bf8e7",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-961c76d4c903be67",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-4145331ac1ceef33",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-82b28385d97f6289",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-163592556b938766",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-0a0953d29a643936",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-61b65cb187714a71",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-5c8dd007f95f06b0",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-a170e021904396ef",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-19f571220cdd9cf9",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-05b5c858c3d0b17e",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-e7fc89e9b02929f8",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-4b70d44e2235fc34",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-4c4a04841ff0c53f",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-d99023addee30b43",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-123037a38e0505fe",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-f941c11b12b684f2",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-4b5b5383ee0ff7cf",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-859278d797dd8b9e",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-1e4af984ab71abd2",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-47e8dbf5a54c1f70",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-29fc7ca9e431f666",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-c90e96c65895fdd5",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-9d21452221dbda37",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-ddfd93ccbe8fa1b2",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-8696e36af315f8e0",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-a926e17ff37bd9dd",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-7935c7665163881f",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-5095c8ff0fa03b63",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-5403d1db16a3b786",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-316e623366f3cb4d",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-4a68a44ad186e098",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-21317434cf9f8abb",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-1010af463c2622be",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-75441227f512107d",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-a41fefee4d17f142",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-56b606a1aff06f93",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-eb721934a01f4f4f",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-18d6cf0cee695aac",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-eddfa49f2eafa1e7",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-aeef17111ec48cfc",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-4414de8893aa0407",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-e740803842048139",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-1542ddda74ab4ef8",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-b445bdbe39915fdb",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-11a2317ebed4dbe3",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-ec3a724eb22c4314",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-16dfa1da6cd0e0a1",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-6fda81fe734ba163",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-4dda241e318f32de",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-88f5d8163eaa63a4",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-ab3c5f4d972ad01e",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-d8b0771f1a144fc5",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-0e0cc2842fcf8da8",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-22f9e8c75c6d552f",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-df138c2af0c0e84e",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-8fbf6b636a815cc5",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-0a3e682ed98b2052",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-c8e817f3f3d789d5",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-b432cefca50a9e2c",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-8cb0a940b44260b1",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-73ee3510bf454e53",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-12683d54d7415384",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Risk",
+        "code": "SHAPE_TEXT_MISSING",
+        "scope": "ev-e617d6369980d229",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Risk",
+        "code": "SHAPE_TEXT_MISSING",
+        "scope": "ev-95a14dca55285a2d",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Risk",
+        "code": "SHAPE_TEXT_MISSING",
+        "scope": "ev-2f54d5b6a55d9b62",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Risk",
+        "code": "SHAPE_TEXT_MISSING",
+        "scope": "ev-ff014b0f67030b83",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Risk",
+        "code": "SHAPE_TEXT_MISSING",
+        "scope": "ev-3d6230b3998618b1",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Risk",
+        "code": "SHAPE_TEXT_MISSING",
+        "scope": "ev-41682b47c6d2ffcb",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Risk",
+        "code": "SHAPE_TEXT_MISSING",
+        "scope": "ev-c2d6bbaaf99028e0",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Risk",
+        "code": "SHAPE_TEXT_MISSING",
+        "scope": "ev-fa4f250920ebcdbc",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Risk",
+        "code": "SHAPE_TEXT_MISSING",
+        "scope": "ev-23b927c6443b3c2d",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-d45bae588b5111e1",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-d9865094ccebfe8b",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-f6c803ee836e3434",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-48494b443c612fcc",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-1cd42bee55665d49",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-2b5cd3638bd2e752",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-c28fc1eb24501787",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-78f97b6ee4e74606",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-f19615710342d55f",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-9b2d73c680115bda",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-831083dc598abf97",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-393d9946c9071a5d",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-65fc4a7a3e39c8d7",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-ac342770b71bc6c6",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-a707e15adbf29024",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-87e39a77084a8c6e",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-20c29c1ebffe4e28",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-e987cabf54eb4432",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-55a6c94676173997",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-7c8c9e49443a2940",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-3c6456a88cffdd97",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-44c92082857bcded",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-1184020f8a7ce16e",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-fc799d622b2a7271",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-ac2b2588d9ee104c",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-46b04dce6ef35021",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-79216ef7b6c7e7e6",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-acc84da6c28be7af",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-8d2ad686ef5e5c68",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-43f54671747ce5e5",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-cd8a4a90473103f6",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-b83bbe9dcb78d62b",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-1887b65a8b3aaa73",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-8f9913ab4c217cfc",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-6b50345f7432fa32",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-4729608b619a01fe",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-f40b3ae4217c3cfe",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-8f773f582f022541",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-b0a5cbf715307f6c",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-ecc9be87130a6e5b",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-96c3816e056a2808",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-a77aa4a3e3db7d52",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-878ffc0e5b8de0a6",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-4e255646f33994ba",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-ea42ffcaaabfa6b2",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-eaa3144a4e3152bb",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-195b4b0815e9155d",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-4f507e855cbbf92b",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-2d4208019a76dc43",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-bad2dd9fc773edae",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-44cf3c7974550f7c",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-0b5e815d641c9bcc",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-06e68bad2a5a407b",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-32a6a151a895e629",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-1587c7da9d379328",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-d801152ed0069759",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-937c678a5bd004a4",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-6158e67a8a72f337",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-45ca70e28afbc673",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-9d5d1161466e3a8a",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Optional",
+        "code": "DECORATIVE_SHAPE_UNLABELED",
+        "scope": "ev-487ca8cc3dc21c5b",
+        "message": "Shape has no text label. Need semantic classification confirmation.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Risk",
+        "code": "LOW_EDGE_CONFIDENCE",
+        "scope": "ev-f294fc68ec30c8a6",
+        "message": "Connector endpoint resolution has low confidence and needs review.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Risk",
+        "code": "LOW_EDGE_CONFIDENCE",
+        "scope": "ev-6907beb8ef5e2047",
+        "message": "Connector endpoint resolution has low confidence and needs review.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Risk",
+        "code": "LOW_EDGE_CONFIDENCE",
+        "scope": "ev-8dcb1b0897f09e14",
+        "message": "Connector endpoint resolution has low confidence and needs review.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Risk",
+        "code": "LOW_EDGE_CONFIDENCE",
+        "scope": "ev-77c3cc49a7491253",
+        "message": "Connector endpoint resolution has low confidence and needs review.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Risk",
+        "code": "LOW_EDGE_CONFIDENCE",
+        "scope": "ev-3db259741211d84f",
+        "message": "Connector endpoint resolution has low confidence and needs review.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Risk",
+        "code": "LOW_EDGE_CONFIDENCE",
+        "scope": "ev-959b0ba5386a4a38",
+        "message": "Connector endpoint resolution has low confidence and needs review.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Risk",
+        "code": "LOW_EDGE_CONFIDENCE",
+        "scope": "ev-8c6ff4142e381624",
+        "message": "Connector endpoint resolution has low confidence and needs review.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Risk",
+        "code": "LOW_EDGE_CONFIDENCE",
+        "scope": "ev-0dc9d5f8e42a0c50",
+        "message": "Connector endpoint resolution has low confidence and needs review.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Risk",
+        "code": "LOW_EDGE_CONFIDENCE",
+        "scope": "ev-d3f2336541638193",
+        "message": "Connector endpoint resolution has low confidence and needs review.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Risk",
+        "code": "LOW_EDGE_CONFIDENCE",
+        "scope": "ev-479fc7cd3ac042eb",
+        "message": "Connector endpoint resolution has low confidence and needs review.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Risk",
+        "code": "LOW_EDGE_CONFIDENCE",
+        "scope": "ev-af400eeedec84811",
+        "message": "Connector endpoint resolution has low confidence and needs review.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Risk",
+        "code": "LOW_EDGE_CONFIDENCE",
+        "scope": "ev-c3867fe44d1aeabc",
+        "message": "Connector endpoint resolution has low confidence and needs review.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Risk",
+        "code": "LOW_EDGE_CONFIDENCE",
+        "scope": "ev-082231873dc88dc7",
+        "message": "Connector endpoint resolution has low confidence and needs review.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Risk",
+        "code": "LOW_EDGE_CONFIDENCE",
+        "scope": "ev-c0727de664f6cf8f",
+        "message": "Connector endpoint resolution has low confidence and needs review.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Risk",
+        "code": "LOW_EDGE_CONFIDENCE",
+        "scope": "ev-8b39a031bbe62368",
+        "message": "Connector endpoint resolution has low confidence and needs review.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Risk",
+        "code": "LOW_EDGE_CONFIDENCE",
+        "scope": "ev-f429a72e8eca1f88",
+        "message": "Connector endpoint resolution has low confidence and needs review.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Risk",
+        "code": "LOW_EDGE_CONFIDENCE",
+        "scope": "ev-3d0d79f11cd2b7b6",
+        "message": "Connector endpoint resolution has low confidence and needs review.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Risk",
+        "code": "LOW_EDGE_CONFIDENCE",
+        "scope": "ev-5bb11a2e11d270ce",
+        "message": "Connector endpoint resolution has low confidence and needs review.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Risk",
+        "code": "LOW_EDGE_CONFIDENCE",
+        "scope": "ev-5bad7f7ef6cd3930",
+        "message": "Connector endpoint resolution has low confidence and needs review.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Risk",
+        "code": "LOW_EDGE_CONFIDENCE",
+        "scope": "ev-5d4c00419ae49ce1",
+        "message": "Connector endpoint resolution has low confidence and needs review.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Risk",
+        "code": "LOW_EDGE_CONFIDENCE",
+        "scope": "ev-25bd4b4d2a4e1c99",
+        "message": "Connector endpoint resolution has low confidence and needs review.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Risk",
+        "code": "LOW_EDGE_CONFIDENCE",
+        "scope": "ev-da07ce01adb8c289",
+        "message": "Connector endpoint resolution has low confidence and needs review.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Risk",
+        "code": "LOW_EDGE_CONFIDENCE",
+        "scope": "ev-c17d9f9628a0f18a",
+        "message": "Connector endpoint resolution has low confidence and needs review.",
+        "lifecycle": "Detected"
+      },
+      {
+        "type": "Risk",
+        "code": "LOW_EDGE_CONFIDENCE",
+        "scope": "ev-fce3fbb1885ef8f9",
+        "message": "Connector endpoint resolution has low confidence and needs review.",
+        "lifecycle": "Detected"
+      }
+    ],
+    "warnings": [],
+    "targetCapabilities": {
+      "azureBicep": true,
+      "terraformAzureRM": true,
+      "multiCloud": "candidate",
+      "onPremAutomation": "partial"
+    }
+  },
+  "providerExtensions": {
+    "azure": {},
+    "aws": {},
+    "gcp": {},
+    "vmware": {},
+    "kubernetes": {},
+    "customUnknown": {}
+  },
+  "readiness": {
+    "draft": true,
+    "validated": false,
+    "productionReady": true,
+    "openBlockerCount": 0,
+    "openRiskCount": 33,
+    "gateReasons": []
+  },
+  "codegenPolicy": {
+    "allowedCategories": [
+      "azure.networkBundle"
+    ]
+  }
+}

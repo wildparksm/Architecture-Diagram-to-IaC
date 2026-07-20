@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Architecture Diagram to IaC</title>
+  <style>
+    :root {
+      --bg-1: #0b1020;
+      --bg-2: #16213e;
+      --surface: rgba(255, 255, 255, 0.08);
+      --surface-border: rgba(255, 255, 255, 0.2);
+      --text: #f5f7ff;
+      --muted: #cbd2ff;
+      --primary: #6ae3ff;
+      --ok: #73f0a8;
+      --warn: #ffd166;
+      --err: #ff7f7f;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "Segoe UI", "Noto Sans", sans-serif;
+      color: var(--text);
+      background: radial-gradient(circle at 0% 0%, #263a6f 0%, transparent 45%),
+                  radial-gradient(circle at 100% 100%, #163b52 0%, transparent 40%),
+                  linear-gradient(135deg, var(--bg-1), var(--bg-2));
+      display: grid;
+      place-items: center;
+      padding: 24px;
+    }
+
+    .shell {
+      width: min(920px, 100%);
+      background: var(--surface);
+      border: 1px solid var(--surface-border);
+      border-radius: 20px;
+      padding: 24px;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(1.35rem, 2vw, 1.9rem);
+      letter-spacing: 0.02em;
+    }
+
+    .sub {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .badge-row {
+      margin-top: 12px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .badge {
+      border: 1px solid var(--surface-border);
+      border-radius: 999px;
+      padding: 6px 10px;
+      font-size: 0.82rem;
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--text);
+    }
+
+    .grid {
+      margin-top: 18px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+
+    .panel {
+      border: 1px solid var(--surface-border);
+      border-radius: 14px;
+      padding: 14px;
+      background: rgba(0, 0, 0, 0.15);
+    }
+
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .allowlist {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .allow-card {
+      border: 1px solid var(--surface-border);
+      border-radius: 10px;
+      padding: 10px;
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .allow-card label {
+      display: flex;
+      gap: 8px;
+      align-items: flex-start;
+      cursor: pointer;
+      font-size: 0.92rem;
+      line-height: 1.35;
+    }
+
+    .allow-note {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    .advanced-allow {
+      margin-top: 10px;
+      width: 100%;
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text);
+      padding: 10px;
+    }
+
+    input[type="file"] {
+      color: var(--muted);
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px dashed rgba(255, 255, 255, 0.25);
+      border-radius: 10px;
+      padding: 10px;
+      width: 100%;
+    }
+
+    button {
+      border: 0;
+      border-radius: 10px;
+      padding: 10px 14px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      background: linear-gradient(120deg, #6ae3ff, #7cb6ff);
+      color: #05243a;
+      transition: transform 0.15s ease, opacity 0.15s ease;
+    }
+
+    button:hover { transform: translateY(-1px); }
+    button:disabled { opacity: 0.55; cursor: not-allowed; transform: none; }
+
+    .status {
+      font-weight: 600;
+      margin-top: 8px;
+    }
+
+    .queued { color: var(--warn); }
+    .running { color: var(--primary); }
+    .completed { color: var(--ok); }
+    .failed { color: var(--err); }
+
+    .kv {
+      display: grid;
+      grid-template-columns: 150px 1fr;
+      gap: 8px;
+      margin-top: 8px;
+      font-size: 0.92rem;
+    }
+
+    .kv .k { color: var(--muted); }
+
+    .artifacts {
+      margin-top: 10px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 8px;
+    }
+
+    .artifacts a {
+      text-decoration: none;
+      color: var(--text);
+      border: 1px solid var(--surface-border);
+      background: rgba(255, 255, 255, 0.05);
+      padding: 9px 10px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      transition: border-color 0.2s ease;
+      overflow-wrap: anywhere;
+    }
+
+    .artifacts a:hover { border-color: var(--primary); }
+
+    pre {
+      margin: 10px 0 0;
+      padding: 10px;
+      border-radius: 8px;
+      background: rgba(0, 0, 0, 0.35);
+      color: #e8ebff;
+      max-height: 220px;
+      overflow: auto;
+      font-size: 0.82rem;
+      line-height: 1.35;
+      white-space: pre-wrap;
+    }
+
+    .timeline {
+      margin-top: 10px;
+      display: grid;
+      gap: 6px;
+      font-size: 0.88rem;
+    }
+
+    .timeline-item {
+      border: 1px solid var(--surface-border);
+      border-radius: 8px;
+      padding: 8px 10px;
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--muted);
+    }
+
+    .summary-grid {
+      margin-top: 10px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: 8px;
+    }
+
+    .summary-item {
+      border: 1px solid var(--surface-border);
+      border-radius: 8px;
+      padding: 8px 10px;
+      background: rgba(255, 255, 255, 0.04);
+      font-size: 0.88rem;
+    }
+
+    .summary-item .k {
+      color: var(--muted);
+      font-size: 0.8rem;
+    }
+
+    .summary-item .v {
+      margin-top: 4px;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <h1>Diagram Upload to IaC Pipeline</h1>
+    <p class="sub">Upload a PPTX or draw.io file, watch pipeline progress, and download generated artifacts.</p>
+    <div class="badge-row">
+      <div class="badge" id="healthBadge">Health: checking...</div>
+      <div class="badge" id="enforcementBadge">Enforcement: -</div>
+    </div>
+
+    <section class="grid">
+      <div class="panel">
+        <div class="row">
+          <input id="fileInput" type="file" accept=".pptx,.drawio,.xml" />
+          <button id="uploadBtn">Upload and Run</button>
+        </div>
+        <div class="allow-note">Default is report-only. Select only the categories you want code-generated.</div>
+        <div class="allowlist">
+          <div class="allow-card"><label><input type="checkbox" class="allowCategory" value="azure.networkBundle" />Network bundle</label></div>
+          <div class="allow-card"><label><input type="checkbox" class="allowCategory" value="azure.virtualNetwork" />Virtual network</label></div>
+          <div class="allow-card"><label><input type="checkbox" class="allowCategory" value="azure.networkSecurityGroup" />Network security group</label></div>
+          <div class="allow-card"><label><input type="checkbox" class="allowCategory" value="azure.routeTable" />Route table</label></div>
+          <div class="allow-card"><label><input type="checkbox" class="allowCategory" value="azure.logAnalyticsWorkspace" />Log Analytics workspace</label></div>
+        </div>
+        <input id="advancedAllowCategories" class="advanced-allow" type="text" placeholder="Advanced: comma-separated categories (optional)" />
+        <div id="statusText" class="status">Idle</div>
+        <div class="kv">
+          <div class="k">Job ID</div><div id="jobId">-</div>
+          <div class="k">Run ID</div><div id="runId">-</div>
+          <div class="k">Enforcement</div><div id="enforcementMode">-</div>
+          <div class="k">Location</div><div id="enforcementLocation">-</div>
+          <div class="k">Last Message</div><div id="message">-</div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <strong>Artifacts</strong>
+        <div id="artifacts" class="artifacts"></div>
+      </div>
+
+      <div class="panel">
+        <strong>Pipeline Logs</strong>
+        <pre id="logs">No logs yet.</pre>
+      </div>
+
+      <div class="panel">
+        <strong>Job Timeline</strong>
+        <div id="timeline" class="timeline">
+          <div class="timeline-item">No activity yet.</div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <strong>Allowlist Compliance</strong>
+        <div id="complianceNote" class="allow-note">Run a job to calculate policy compliance summary.</div>
+        <div class="summary-grid">
+          <div class="summary-item"><div class="k">Mode</div><div class="v" id="summaryMode">-</div></div>
+          <div class="summary-item"><div class="k">Azure Resources in IR</div><div class="v" id="summaryAzureTotal">-</div></div>
+          <div class="summary-item"><div class="k">Allowlisted (eligible)</div><div class="v" id="summaryEligible">-</div></div>
+          <div class="summary-item"><div class="k">Policy-suppressed</div><div class="v" id="summarySuppressed">-</div></div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <strong>Policy Snapshot</strong>
+        <div class="kv">
+          <div class="k">Requested</div><div id="policyRequested">-</div>
+          <div class="k">Effective</div><div id="policyEffective">-</div>
+          <div class="k">Runtime</div><div id="runtimePlatform">-</div>
+          <div class="k">Runner Hash</div><div id="runtimeRunnerHash">-</div>
+          <div class="k">Emitter Hash</div><div id="runtimeEmitterHash">-</div>
+          <div class="k">Policy Hash</div><div id="runtimePolicyHash">-</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const fileInput = document.getElementById('fileInput');
+    const uploadBtn = document.getElementById('uploadBtn');
+    const statusText = document.getElementById('statusText');
+    const jobIdEl = document.getElementById('jobId');
+    const runIdEl = document.getElementById('runId');
+    const enforcementModeEl = document.getElementById('enforcementMode');
+    const enforcementLocationEl = document.getElementById('enforcementLocation');
+    const messageEl = document.getElementById('message');
+    const artifactsEl = document.getElementById('artifacts');
+    const logsEl = document.getElementById('logs');
+    const timelineEl = document.getElementById('timeline');
+    const healthBadgeEl = document.getElementById('healthBadge');
+    const enforcementBadgeEl = document.getElementById('enforcementBadge');
+    const advancedAllowCategories = document.getElementById('advancedAllowCategories');
+    const complianceNoteEl = document.getElementById('complianceNote');
+    const summaryModeEl = document.getElementById('summaryMode');
+    const summaryAzureTotalEl = document.getElementById('summaryAzureTotal');
+    const summaryEligibleEl = document.getElementById('summaryEligible');
+    const summarySuppressedEl = document.getElementById('summarySuppressed');
+    const policyRequestedEl = document.getElementById('policyRequested');
+    const policyEffectiveEl = document.getElementById('policyEffective');
+    const runtimePlatformEl = document.getElementById('runtimePlatform');
+    const runtimeRunnerHashEl = document.getElementById('runtimeRunnerHash');
+    const runtimeEmitterHashEl = document.getElementById('runtimeEmitterHash');
+    const runtimePolicyHashEl = document.getElementById('runtimePolicyHash');
+
+    let pollTimer = null;
+    const timelineEvents = [];
+    let summarizedRunId = '';
+    const knownAllowedCategories = new Set();
+
+    function pushTimeline(text) {
+      timelineEvents.unshift(text);
+      const sliced = timelineEvents.slice(0, 10);
+      timelineEl.innerHTML = '';
+      sliced.forEach((item) => {
+        const div = document.createElement('div');
+        div.className = 'timeline-item';
+        div.textContent = item;
+        timelineEl.appendChild(div);
+      });
+    }
+
+    function setStatus(status, text) {
+      statusText.textContent = text || status;
+      statusText.className = `status ${status || ''}`;
+    }
+
+    function renderArtifacts(runId, names) {
+      artifactsEl.innerHTML = '';
+      if (!runId || !names || names.length === 0) {
+        const empty = document.createElement('div');
+        empty.textContent = 'No artifacts available yet.';
+        artifactsEl.appendChild(empty);
+        return;
+      }
+
+      names.forEach((name) => {
+        const a = document.createElement('a');
+        a.href = `/api/v1/runs/${encodeURIComponent(runId)}/artifacts/${encodeURIComponent(name)}`;
+        a.textContent = name;
+        a.target = '_blank';
+        artifactsEl.appendChild(a);
+      });
+    }
+
+    async function refreshHealth() {
+      try {
+        const res = await fetch('/health');
+        if (!res.ok) {
+          throw new Error(`health ${res.status}`);
+        }
+        const payload = await res.json();
+        healthBadgeEl.textContent = `Health: ${payload.status || 'unknown'}`;
+        const mode = payload.codegenEnforcementMode || '-';
+        const location = payload.codegenEnforcementLocation || '-';
+        enforcementBadgeEl.textContent = `Enforcement: ${mode} @ ${location}`;
+
+        knownAllowedCategories.clear();
+        const known = Array.isArray(payload.knownAllowedCategories) ? payload.knownAllowedCategories : [];
+        known
+          .map((value) => String(value || '').trim())
+          .filter(Boolean)
+          .forEach((value) => knownAllowedCategories.add(value));
+      } catch (err) {
+        healthBadgeEl.textContent = 'Health: unavailable';
+        enforcementBadgeEl.textContent = `Enforcement: unknown (${err.message})`;
+      }
+    }
+
+    function stopPolling() {
+      if (pollTimer) {
+        clearInterval(pollTimer);
+        pollTimer = null;
+      }
+    }
+
+    function collectAllowedCategories() {
+      const selected = Array.from(document.querySelectorAll('.allowCategory:checked')).map((item) => item.value);
+      const advanced = advancedAllowCategories.value
+        .split(',')
+        .map((value) => value.trim())
+        .filter(Boolean);
+      return Array.from(new Set([...selected, ...advanced]));
+    }
+
+    function findUnknownCategories(values) {
+      if (!(knownAllowedCategories instanceof Set) || knownAllowedCategories.size === 0) {
+        return [];
+      }
+      return values.filter((value) => !knownAllowedCategories.has(value));
+    }
+
+    async function fetchJob(jobId) {
+      const res = await fetch(`/api/v1/jobs/${encodeURIComponent(jobId)}`);
+      if (!res.ok) {
+        throw new Error(`Failed to fetch job status (${res.status})`);
+      }
+      return res.json();
+    }
+
+    async function fetchArtifactJson(runId, name) {
+      const res = await fetch(`/api/v1/runs/${encodeURIComponent(runId)}/artifacts/${encodeURIComponent(name)}`);
+      if (!res.ok) {
+        throw new Error(`Failed to load ${name} (${res.status})`);
+      }
+      return res.json();
+    }
+
+    function shortHash(value) {
+      if (typeof value !== 'string' || value.length < 12) {
+        return '-';
+      }
+      return `${value.slice(0, 12)}...`;
+    }
+
+    function renderPolicySnapshot(job) {
+      const snapshot = job && typeof job.codegenPolicySnapshot === 'object' ? job.codegenPolicySnapshot : {};
+      const runtime = job && typeof job.runtimeFingerprint === 'object' ? job.runtimeFingerprint : {};
+      const modules = runtime && typeof runtime.moduleFiles === 'object' ? runtime.moduleFiles : {};
+
+      const requested = Array.isArray(snapshot.requestedAllowedCategories) ? snapshot.requestedAllowedCategories : [];
+      const effective = Array.isArray(snapshot.effectiveAllowedCategories) ? snapshot.effectiveAllowedCategories : [];
+
+      policyRequestedEl.textContent = requested.length ? requested.join(', ') : '(report-only)';
+      policyEffectiveEl.textContent = effective.length ? effective.join(', ') : '(report-only)';
+      runtimePlatformEl.textContent = runtime.platform || '-';
+      runtimeRunnerHashEl.textContent = shortHash(modules?.runner?.sha256);
+      runtimeEmitterHashEl.textContent = shortHash(modules?.emitter?.sha256);
+      runtimePolicyHashEl.textContent = shortHash(modules?.policy?.sha256);
+    }
+
+    async function renderComplianceSummary(job) {
+      if (!job || !job.runId || summarizedRunId === job.runId) {
+        return;
+      }
+
+      const categories = Array.isArray(job.allowedCategories) ? job.allowedCategories : [];
+      const mode = categories.length > 0 ? 'allowlist' : 'report-only';
+      summaryModeEl.textContent = mode;
+
+      try {
+        const ir = await fetchArtifactJson(job.runId, 'architecture.ir.json');
+        const resources = ir?.providerNeutralCore?.resources;
+        const azureResources = Array.isArray(resources)
+          ? resources.filter((item) => item && typeof item === 'object' && String(item.category || '').startsWith('azure.'))
+          : [];
+
+        const allowedSet = new Set(categories);
+        const eligible = azureResources.filter((item) => allowedSet.has(String(item.category || ''))).length;
+        const suppressed = Math.max(0, azureResources.length - eligible);
+
+        summaryAzureTotalEl.textContent = String(azureResources.length);
+        summaryEligibleEl.textContent = String(eligible);
+        summarySuppressedEl.textContent = String(suppressed);
+        complianceNoteEl.textContent = `Computed from architecture.ir.json (${job.runId}).`;
+        summarizedRunId = job.runId;
+      } catch (err) {
+        complianceNoteEl.textContent = `Could not compute summary: ${err.message}`;
+        summaryAzureTotalEl.textContent = '-';
+        summaryEligibleEl.textContent = '-';
+        summarySuppressedEl.textContent = '-';
+      }
+    }
+
+    async function pollJob(jobId) {
+      try {
+        const job = await fetchJob(jobId);
+        jobIdEl.textContent = job.jobId || '-';
+        runIdEl.textContent = job.runId || '-';
+        enforcementModeEl.textContent = job.codegenEnforcementMode || '-';
+        enforcementLocationEl.textContent = job.codegenEnforcementLocation || '-';
+        messageEl.textContent = job.message || '-';
+        renderPolicySnapshot(job);
+        pushTimeline(`[${new Date().toLocaleTimeString()}] ${job.status} - ${job.message || 'no message'}`);
+
+        setStatus(job.status, `Status: ${job.status}`);
+
+        const lines = [];
+        if (job.stdout) {
+          lines.push('[stdout]');
+          lines.push(job.stdout.trim());
+        }
+        if (job.stderr) {
+          lines.push('');
+          lines.push('[stderr]');
+          lines.push(job.stderr.trim());
+        }
+        logsEl.textContent = lines.length ? lines.join('\n') : 'No logs yet.';
+
+        renderArtifacts(job.runId, job.artifactNames || []);
+
+        if (job.status === 'completed' || job.status === 'failed') {
+          await renderComplianceSummary(job);
+          stopPolling();
+          uploadBtn.disabled = false;
+        }
+      } catch (err) {
+        stopPolling();
+        uploadBtn.disabled = false;
+        setStatus('failed', `Status: failed (${err.message})`);
+      }
+    }
+
+    uploadBtn.addEventListener('click', async () => {
+      const file = fileInput.files && fileInput.files[0];
+      if (!file) {
+        alert('Please choose a file first.');
+        return;
+      }
+
+      const preflightAllowedCategories = collectAllowedCategories();
+      const unknown = findUnknownCategories(preflightAllowedCategories);
+      if (unknown.length > 0) {
+        const msg = `Unsupported category: ${unknown.join(', ')}. Check known categories in health status.`;
+        setStatus('failed', `Status: failed (${msg})`);
+        logsEl.textContent = msg;
+        pushTimeline(`[${new Date().toLocaleTimeString()}] blocked - ${msg}`);
+        return;
+      }
+
+      uploadBtn.disabled = true;
+      artifactsEl.innerHTML = '';
+      logsEl.textContent = 'Waiting for pipeline logs...';
+      complianceNoteEl.textContent = 'Calculating after completion...';
+      summaryModeEl.textContent = '-';
+      summaryAzureTotalEl.textContent = '-';
+      summaryEligibleEl.textContent = '-';
+      summarySuppressedEl.textContent = '-';
+      policyRequestedEl.textContent = '-';
+      policyEffectiveEl.textContent = '-';
+      runtimePlatformEl.textContent = '-';
+      runtimeRunnerHashEl.textContent = '-';
+      runtimeEmitterHashEl.textContent = '-';
+      runtimePolicyHashEl.textContent = '-';
+      summarizedRunId = '';
+      setStatus('queued', 'Status: uploading');
+      pushTimeline(`[${new Date().toLocaleTimeString()}] uploading ${file.name}`);
+
+      const form = new FormData();
+      form.append('file', file);
+      const allowedCategories = preflightAllowedCategories;
+      form.append('allowedCategories', allowedCategories.join(','));
+
+      try {
+        const res = await fetch('/api/v1/ingest', {
+          method: 'POST',
+          body: form,
+        });
+        const payload = await res.json();
+        if (!res.ok) {
+          throw new Error(payload.detail || `Upload failed (${res.status})`);
+        }
+
+        jobIdEl.textContent = payload.jobId || '-';
+        runIdEl.textContent = payload.runId || '-';
+        enforcementModeEl.textContent = payload.codegenEnforcementMode || '-';
+        enforcementLocationEl.textContent = payload.codegenEnforcementLocation || '-';
+        messageEl.textContent = payload.allowedCategories && payload.allowedCategories.length
+          ? `Job accepted with allowlist: ${payload.allowedCategories.join(', ')}`
+          : 'Job accepted in report-only mode';
+        pushTimeline(`[${new Date().toLocaleTimeString()}] queued ${payload.jobId}`);
+        setStatus('queued', 'Status: queued');
+
+        stopPolling();
+        pollJob(payload.jobId);
+        pollTimer = setInterval(() => pollJob(payload.jobId), 2000);
+      } catch (err) {
+        uploadBtn.disabled = false;
+        setStatus('failed', `Status: failed (${err.message})`);
+        logsEl.textContent = String(err.message || err);
+        pushTimeline(`[${new Date().toLocaleTimeString()}] failed - ${String(err.message || err)}`);
+      }
+    });
+
+    refreshHealth();
+  </script>
+</body>
+</html>

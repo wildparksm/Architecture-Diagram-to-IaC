@@ -1,0 +1,106 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://architecture-diagram-to-iac/schemas/raw-evidence.schema.json",
+  "title": "RawEvidence",
+  "type": "object",
+  "required": [
+    "stableId",
+    "source",
+    "kind",
+    "provenance",
+    "confidence",
+    "parserVersion"
+  ],
+  "properties": {
+    "stableId": {
+      "type": "string",
+      "description": "Stable identifier for evidence record."
+    },
+    "source": {
+      "type": "object",
+      "required": ["documentId", "page", "objectId"],
+      "properties": {
+        "documentId": { "type": "string" },
+        "page": { "type": "string" },
+        "objectId": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "kind": {
+      "type": "string",
+      "enum": ["shape", "text", "icon", "connector", "container", "legend", "note", "image"]
+    },
+    "text": {
+      "type": "string"
+    },
+    "geometry": {
+      "type": "object",
+      "properties": {
+        "bbox": {
+          "type": "object",
+          "properties": {
+            "x": { "type": "number" },
+            "y": { "type": "number" },
+            "width": { "type": "number" },
+            "height": { "type": "number" }
+          },
+          "required": ["x", "y", "width", "height"],
+          "additionalProperties": false
+        },
+        "rotation": { "type": "number" },
+        "zOrder": { "type": "integer" }
+      },
+      "additionalProperties": false
+    },
+    "provenance": {
+      "type": "object",
+      "required": ["adapter", "extractor", "runId"],
+      "properties": {
+        "adapter": { "type": "string" },
+        "extractor": { "type": "string" },
+        "runId": { "type": "string" },
+        "evidenceRefs": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      },
+      "additionalProperties": false
+    },
+    "classificationCandidates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["label", "score"],
+        "properties": {
+          "label": { "type": "string" },
+          "score": { "type": "number", "minimum": 0, "maximum": 1 }
+        },
+        "additionalProperties": false
+      }
+    },
+    "confidence": {
+      "type": "object",
+      "required": ["existence", "text", "classification", "containment", "connectivity", "deployability"],
+      "properties": {
+        "existence": { "type": "number", "minimum": 0, "maximum": 1 },
+        "text": { "type": "number", "minimum": 0, "maximum": 1 },
+        "classification": { "type": "number", "minimum": 0, "maximum": 1 },
+        "containment": { "type": "number", "minimum": 0, "maximum": 1 },
+        "connectivity": { "type": "number", "minimum": 0, "maximum": 1 },
+        "deployability": { "type": "number", "minimum": 0, "maximum": 1 }
+      },
+      "additionalProperties": false
+    },
+    "unresolvedQuestions": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "parserVersion": {
+      "type": "string"
+    },
+    "modelVersion": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,13 @@
+{
+  "runId": "run-20260715-041428",
+  "timestampUtc": "2026-07-15T04:14:32.674911+00:00",
+  "inputFile": "samples\\simple.drawio",
+  "recordCount": 5,
+  "graphNodeCount": 2,
+  "graphEdgeCount": 1,
+  "traceabilityRowCount": 5,
+  "questionCount": 1,
+  "emittedBicep": "main.bicep",
+  "validator": "raw-evidence-validator/0.1.0",
+  "status": "passed"
+}

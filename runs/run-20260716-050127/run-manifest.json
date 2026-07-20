@@ -1,0 +1,45 @@
+{
+  "runId": "run-20260716-050127",
+  "timestampUtc": "2026-07-16T05:01:32.598781+00:00",
+  "inputFile": "Architecture Diagram to IaC Compiler.pptx",
+  "recordCount": 542,
+  "graphNodeCount": 511,
+  "graphEdgeCount": 31,
+  "traceabilityRowCount": 542,
+  "questionCount": 238,
+  "emittedBicep": "main.bicep",
+  "validator": "raw-evidence-validator/0.1.0",
+  "status": "passed",
+  "codegenPolicySnapshot": {
+    "enforcementMode": "runner-pre-filter",
+    "enforcementLocation": [
+      "src/run_pptx_evidence.py",
+      "src/run_drawio_evidence.py"
+    ],
+    "requestedAllowedCategories": [
+      "azure.networkBundle"
+    ],
+    "effectiveAllowedCategories": [
+      "azure.networkBundle"
+    ]
+  },
+  "runtimeFingerprint": {
+    "pythonVersion": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+    "pythonExecutable": "C:\\Users\\\ubc15\uc0c1\ubbfc\\AppData\\Local\\Microsoft\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\python.exe",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "moduleFiles": {
+      "runner": {
+        "path": "G:\\doc\\project\\Architecture Diagram to IaC\\src\\run_pptx_evidence.py",
+        "sha256": "598c4ea39e23870aa765e2a2ee64ce32de6615f0403ab4fa3b086f3b0b277fdf"
+      },
+      "emitter": {
+        "path": "G:\\doc\\project\\Architecture Diagram to IaC\\src\\emitters\\bicep_emitter.py",
+        "sha256": "d14d7b2c8f4f6286d18e71d2c548c0ac903bf70a3a22fc5321c28469e5d6f742"
+      },
+      "policy": {
+        "path": "G:\\doc\\project\\Architecture Diagram to IaC\\src\\policy\\codegen_policy.py",
+        "sha256": "be85559c262dff5a1896ce3630b41d22389f78e3ef384469c02495bfbc6ca651"
+      }
+    }
+  }
+}

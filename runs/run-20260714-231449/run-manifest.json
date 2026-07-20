@@ -1,0 +1,10 @@
+{
+  "runId": "run-20260714-231449",
+  "timestampUtc": "2026-07-14T23:14:49.928835+00:00",
+  "inputFile": "Architecture Diagram to IaC Compiler.pptx",
+  "recordCount": 542,
+  "graphNodeCount": 511,
+  "graphEdgeCount": 31,
+  "validator": "raw-evidence-validator/0.1.0",
+  "status": "passed"
+}

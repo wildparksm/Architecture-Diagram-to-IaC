@@ -1,0 +1,217 @@
+[
+  {
+    "stableId": "ev-1546bc7945966fd0",
+    "source": {
+      "documentId": "simple.drawio",
+      "page": "mxGraphModel",
+      "objectId": "0"
+    },
+    "kind": "note",
+    "text": "",
+    "geometry": {
+      "bbox": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0
+      },
+      "rotation": 0.0,
+      "zOrder": 0
+    },
+    "provenance": {
+      "adapter": "drawio",
+      "extractor": "drawio-xml-parser",
+      "runId": "run-20260715-040706",
+      "evidenceRefs": []
+    },
+    "classificationCandidates": [
+      {
+        "label": "unknown",
+        "score": 0.2
+      }
+    ],
+    "confidence": {
+      "existence": 1.0,
+      "text": 0.2,
+      "classification": 0.2,
+      "containment": 0.5,
+      "connectivity": 0.3,
+      "deployability": 0.2
+    },
+    "unresolvedQuestions": [],
+    "parserVersion": "drawio-adapter/0.1.0",
+    "modelVersion": "none"
+  },
+  {
+    "stableId": "ev-7c4d910141f0b8bc",
+    "source": {
+      "documentId": "simple.drawio",
+      "page": "mxGraphModel",
+      "objectId": "1"
+    },
+    "kind": "note",
+    "text": "",
+    "geometry": {
+      "bbox": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0
+      },
+      "rotation": 0.0,
+      "zOrder": 0
+    },
+    "provenance": {
+      "adapter": "drawio",
+      "extractor": "drawio-xml-parser",
+      "runId": "run-20260715-040706",
+      "evidenceRefs": []
+    },
+    "classificationCandidates": [
+      {
+        "label": "unknown",
+        "score": 0.2
+      }
+    ],
+    "confidence": {
+      "existence": 1.0,
+      "text": 0.2,
+      "classification": 0.2,
+      "containment": 0.5,
+      "connectivity": 0.3,
+      "deployability": 0.2
+    },
+    "unresolvedQuestions": [],
+    "parserVersion": "drawio-adapter/0.1.0",
+    "modelVersion": "none"
+  },
+  {
+    "stableId": "ev-261dfa7e00b5d765",
+    "source": {
+      "documentId": "simple.drawio",
+      "page": "mxGraphModel",
+      "objectId": "2"
+    },
+    "kind": "shape",
+    "text": "Web",
+    "geometry": {
+      "bbox": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0
+      },
+      "rotation": 0.0,
+      "zOrder": 0
+    },
+    "provenance": {
+      "adapter": "drawio",
+      "extractor": "drawio-xml-parser",
+      "runId": "run-20260715-040706",
+      "evidenceRefs": []
+    },
+    "classificationCandidates": [
+      {
+        "label": "unknown",
+        "score": 0.2
+      }
+    ],
+    "confidence": {
+      "existence": 1.0,
+      "text": 0.9,
+      "classification": 0.2,
+      "containment": 0.5,
+      "connectivity": 0.3,
+      "deployability": 0.2
+    },
+    "unresolvedQuestions": [],
+    "parserVersion": "drawio-adapter/0.1.0",
+    "modelVersion": "none"
+  },
+  {
+    "stableId": "ev-7e75f86bfe7444c4",
+    "source": {
+      "documentId": "simple.drawio",
+      "page": "mxGraphModel",
+      "objectId": "3"
+    },
+    "kind": "shape",
+    "text": "DB",
+    "geometry": {
+      "bbox": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0
+      },
+      "rotation": 0.0,
+      "zOrder": 0
+    },
+    "provenance": {
+      "adapter": "drawio",
+      "extractor": "drawio-xml-parser",
+      "runId": "run-20260715-040706",
+      "evidenceRefs": []
+    },
+    "classificationCandidates": [
+      {
+        "label": "unknown",
+        "score": 0.2
+      }
+    ],
+    "confidence": {
+      "existence": 1.0,
+      "text": 0.9,
+      "classification": 0.2,
+      "containment": 0.5,
+      "connectivity": 0.3,
+      "deployability": 0.2
+    },
+    "unresolvedQuestions": [],
+    "parserVersion": "drawio-adapter/0.1.0",
+    "modelVersion": "none"
+  },
+  {
+    "stableId": "ev-d251a875e566d6df",
+    "source": {
+      "documentId": "simple.drawio",
+      "page": "mxGraphModel",
+      "objectId": "4"
+    },
+    "kind": "connector",
+    "text": "",
+    "geometry": {
+      "bbox": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0
+      },
+      "rotation": 0.0,
+      "zOrder": 0
+    },
+    "provenance": {
+      "adapter": "drawio",
+      "extractor": "drawio-xml-parser",
+      "runId": "run-20260715-040706",
+      "evidenceRefs": []
+    },
+    "classificationCandidates": [
+      {
+        "label": "unknown",
+        "score": 0.2
+      }
+    ],
+    "confidence": {
+      "existence": 1.0,
+      "text": 0.2,
+      "classification": 0.2,
+      "containment": 0.5,
+      "connectivity": 0.5,
+      "deployability": 0.2
+    },
+    "unresolvedQuestions": [],
+    "parserVersion": "drawio-adapter/0.1.0",
+    "modelVersion": "none"
+  }
+]

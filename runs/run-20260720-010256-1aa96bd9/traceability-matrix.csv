@@ -1,0 +1,6 @@
+source_object,evidence_id,graph_object_type,graph_object_id,ir_object_id,question_or_decision,generated_code_location,validation_result
+simple.drawio:mxGraphModel:0,ev-1546bc7945966fd0,none,,,none,,passed
+simple.drawio:mxGraphModel:1,ev-7c4d910141f0b8bc,none,,,none,,passed
+simple.drawio:mxGraphModel:2,ev-261dfa7e00b5d765,node,ev-261dfa7e00b5d765,ev-261dfa7e00b5d765,none,main.bicep#L9,passed
+simple.drawio:mxGraphModel:3,ev-7e75f86bfe7444c4,node,ev-7e75f86bfe7444c4,,none,,passed
+simple.drawio:mxGraphModel:4,ev-d251a875e566d6df,edge,ev-d251a875e566d6df,,question:LOW_EDGE_CONFIDENCE,main.bicep#L21,passed
