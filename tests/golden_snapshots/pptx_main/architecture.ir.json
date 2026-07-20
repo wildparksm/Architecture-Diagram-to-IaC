@@ -725,8 +725,8 @@
       {
         "id": "ev-e06acf93a87273a7",
         "name": "External User",
-        "category": "unknown",
-        "provider": "neutral",
+        "category": "external.service",
+        "provider": "external",
         "deployability": "DOCUMENTATION_ONLY",
         "evidenceLinks": [
           "ev-e06acf93a87273a7"
@@ -1787,9 +1787,9 @@
       {
         "id": "ev-872c8b50ea71db02",
         "name": "Log Analytics / Diagnostic Settings",
-        "category": "unknown",
-        "provider": "neutral",
-        "deployability": "DOCUMENTATION_ONLY",
+        "category": "azure.logAnalyticsWorkspace",
+        "provider": "azure",
+        "deployability": "FULL_IAC",
         "evidenceLinks": [
           "ev-872c8b50ea71db02"
         ],

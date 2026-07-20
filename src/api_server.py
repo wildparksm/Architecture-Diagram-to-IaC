@@ -30,6 +30,10 @@ ALLOWED_EXTENSIONS = {
     ".pptx": "pptx",
     ".drawio": "drawio",
     ".xml": "drawio",
+    ".png": "image",
+    ".jpg": "image",
+    ".jpeg": "image",
+    ".webp": "image",
 }
 
 ALLOWED_ARTIFACTS = {
@@ -86,6 +90,8 @@ def _update_job(job_id: str, **changes: object) -> None:
 def _build_command(source_type: str, input_path: Path, run_id: str, allowed_categories: List[str]) -> List[str]:
     if source_type == "pptx":
         runner = ROOT_DIR / "src" / "run_pptx_evidence.py"
+    elif source_type == "image":
+        runner = ROOT_DIR / "src" / "run_image_evidence.py"
     else:
         runner = ROOT_DIR / "src" / "run_drawio_evidence.py"
 

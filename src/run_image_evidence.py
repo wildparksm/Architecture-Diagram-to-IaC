@@ -1,3 +1,14 @@
+"""run_image_evidence.py — Pipeline runner for PNG/JPG architecture diagram inputs.
+
+Uses Gemini Vision (via ImageAdapter) to extract evidence, then runs the same
+IR compile → Bicep emit → reports pipeline as the PPTX and Draw.io runners.
+
+Usage:
+    python src/run_image_evidence.py --input diagram.png [--allow-category azure.virtualNetwork ...]
+
+Environment:
+    GEMINI_API_KEY  — Google AI Studio / Vertex AI API key
+"""
 from __future__ import annotations
 
 from copy import deepcopy
@@ -8,7 +19,8 @@ import hashlib
 import platform
 import sys
 
-from adapters.pptx_adapter import PptxAdapter, dump_json
+from adapters.image_adapter import ImageAdapter
+from adapters.pptx_adapter import dump_json
 from emitters.bicep_emitter import emit_bicep
 from graph.reconstruction import build_graph
 from ir.compiler import compile_ir
@@ -31,11 +43,23 @@ def _file_sha256(path: Path) -> str:
 
 
 def parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="Generate raw evidence from PPTX source")
-    parser.add_argument("--input", required=True, help="Path to PPTX file")
+    parser = argparse.ArgumentParser(
+        description="Generate IaC from a PNG/JPG architecture diagram using Gemini Vision"
+    )
+    parser.add_argument("--input", required=True, help="Path to PNG/JPG image file")
     parser.add_argument("--runs-dir", default="runs", help="Output runs directory")
     parser.add_argument("--run-id", default="", help="Optional run id")
-    parser.add_argument("--allow-category", action="append", default=[], help="Allowed codegen category")
+    parser.add_argument(
+        "--allow-category",
+        action="append",
+        default=[],
+        help="Allowed codegen category (repeatable). Empty = report-only mode.",
+    )
+    parser.add_argument(
+        "--api-key",
+        default="",
+        help="Gemini API key (overrides GEMINI_API_KEY env var)",
+    )
     return parser.parse_args()
 
 
@@ -53,8 +77,17 @@ def main() -> int:
     runs_dir = Path(args.runs_dir)
     run_dir = runs_dir / run_id
 
-    adapter = PptxAdapter(run_id=run_id)
-    records = adapter.extract(input_path)
+    api_key = args.api_key or ""
+    adapter = ImageAdapter(run_id=run_id, api_key=api_key if api_key else None)
+
+    try:
+        records = adapter.extract(input_path)
+    except RuntimeError as exc:
+        print(f"image_adapter_error={exc}", file=sys.stderr)
+        return 2
+    except Exception as exc:  # noqa: BLE001
+        print(f"image_extraction_error={exc}", file=sys.stderr)
+        return 2
 
     errors = validate_records(records)
 
@@ -103,6 +136,8 @@ def main() -> int:
             "runId": run_id,
             "timestampUtc": datetime.now(timezone.utc).isoformat(),
             "inputFile": str(input_path),
+            "sourceType": "image",
+            "vlmModel": "gemini-1.5-flash",
             "recordCount": len(records),
             "graphNodeCount": len(graph.get("nodes", [])),
             "graphEdgeCount": len(graph.get("edges", [])),
@@ -113,10 +148,7 @@ def main() -> int:
             "status": "failed" if errors else "passed",
             "codegenPolicySnapshot": {
                 "enforcementMode": "runner-pre-filter",
-                "enforcementLocation": [
-                    "src/run_pptx_evidence.py",
-                    "src/run_drawio_evidence.py",
-                ],
+                "enforcementLocation": ["src/run_image_evidence.py"],
                 "requestedAllowedCategories": list(args.allow_category),
                 "effectiveAllowedCategories": sorted(allowed_categories),
             },
@@ -133,9 +165,9 @@ def main() -> int:
                         "path": str((Path(__file__).resolve().parent / "emitters" / "bicep_emitter.py").resolve()),
                         "sha256": _file_sha256((Path(__file__).resolve().parent / "emitters" / "bicep_emitter.py").resolve()),
                     },
-                    "policy": {
-                        "path": str((Path(__file__).resolve().parent / "policy" / "codegen_policy.py").resolve()),
-                        "sha256": _file_sha256((Path(__file__).resolve().parent / "policy" / "codegen_policy.py").resolve()),
+                    "adapter": {
+                        "path": str((Path(__file__).resolve().parent / "adapters" / "image_adapter.py").resolve()),
+                        "sha256": _file_sha256((Path(__file__).resolve().parent / "adapters" / "image_adapter.py").resolve()),
                     },
                 },
             },
@@ -151,7 +183,8 @@ def main() -> int:
     else:
         validation_lines.append("Status: PASSED")
         validation_lines.append("")
-        validation_lines.append(f"- Records: {len(records)}")
+        validation_lines.append(f"- Source type: image (Gemini Vision)")
+        validation_lines.append(f"- Records extracted: {len(records)}")
         validation_lines.append(f"- Graph nodes: {len(graph.get('nodes', []))}")
         validation_lines.append(f"- Graph edges: {len(graph.get('edges', []))}")
         validation_lines.append(f"- IR resources: {len(architecture_ir.get('providerNeutralCore', {}).get('resources', []))}")
@@ -174,4 +207,4 @@ def main() -> int:
 
 
 if __name__ == "__main__":
-    raise SystemExit(main())
+    sys.exit(main())

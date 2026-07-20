@@ -4,23 +4,60 @@ from dataclasses import dataclass
 from typing import Iterable, List, Sequence
 
 
+# ── Tier 1: Safe — scaffold only, low blast radius ────────────────────────────
 SAFE_EMIT_CATEGORIES = [
     "azure.networkBundle",
     "azure.virtualNetwork",
     "azure.networkSecurityGroup",
     "azure.routeTable",
     "azure.logAnalyticsWorkspace",
+    "azure.subnet",
+    "azure.publicIp",
+    "azure.bastionHost",
+    "azure.keyVault",
+    "azure.storageAccount",
+    "azure.adlsGen2",
 ]
 
+# ── Tier 2: Compute / Data — need review before deploy ────────────────────────
+COMPUTE_DATA_CATEGORIES = [
+    "azure.containerApp",
+    "azure.containerRegistry",
+    "azure.aksCluster",
+    "azure.loadBalancer",
+    "azure.applicationGateway",
+    "azure.redisCache",
+    "azure.cosmosDb",
+    "azure.postgresFlexible",
+    "azure.sqlDatabase",
+    "azure.databricks",
+    "azure.cognitiveSearch",
+    "azure.openAI",
+    "azure.apiManagement",
+    "azure.serviceBus",
+    "azure.eventHub",
+    "azure.functionApp",
+    "azure.appService",
+    "azure.virtualMachine",
+    "azure.diagnosticSettings",
+]
+
+# ── Tier 3: Risky / Manual approval required ──────────────────────────────────
 RISKY_OR_MANUAL_CATEGORIES = [
     "azure.firewall",
+    "azure.firewallPolicy",
     "azure.avdBundle",
     "azure.avdWorkspace",
     "azure.avdHostPool",
     "azure.avdApplicationGroup",
+    "azure.ddosProtection",
+    "azure.privateDnsZone",
+    "azure.privateEndpoint",
 ]
 
-KNOWN_ALLOWED_CATEGORIES = SAFE_EMIT_CATEGORIES + RISKY_OR_MANUAL_CATEGORIES
+KNOWN_ALLOWED_CATEGORIES = (
+    SAFE_EMIT_CATEGORIES + COMPUTE_DATA_CATEGORIES + RISKY_OR_MANUAL_CATEGORIES
+)
 
 
 @dataclass(frozen=True)

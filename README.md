@@ -1,72 +1,160 @@
-# Architecture Diagram to IaC Compiler
+# Architecture Diagram to IaC
 
-## 프로젝트 시작점
-이 프로젝트는 다이어그램의 픽셀을 바로 코드로 변환하지 않고, 증거 기반으로 아키텍처 의도를 복원한 뒤 Provider-neutral IR을 통해 자동화 산출물을 생성하는 것을 목표로 한다.
+아키텍처 다이어그램을 Azure Bicep IaC(Infrastructure as Code)로 자동 변환하는 파이프라인입니다.
 
-현재 기준 자료:
-- `Architecture Diagram to IaC Compiler.pptx` (17장)
-- `POWERPOINT_COPILOT_AUGMENTATION_PROMPT.md` (보강 요구사항 및 확장 방향)
+**지원 입력 형식**
+- PPTX (PowerPoint 슬라이드)
+- Draw.io (`.drawio`, `.xml`)
+- **PNG / JPG / WEBP 이미지** (Gemini Vision 기반 VLM 처리)
 
-## 핵심 원칙
-- Metadata-first, VLM-second
-- Multi-extractor + Evidence Registry + Reconciliation
-- Provider-neutral Core IR
-- Question/Approval Gate 기반 무음 기본값 금지
-- Traceability: Source -> Evidence -> IR -> Code -> Validation
+---
 
-## 초기 MVP 범위
-입력:
-- PPTX
-- draw.io XML
-- PNG/JPG (보조)
+## 주요 기능
 
-현재 입력 방식:
-- CLI 기반 파일 경로 입력(로컬/워크스페이스 파일)
-- 프론트 업로드 페이지 연동은 진행 중이며, 백엔드 업로드 API MVP를 먼저 구현함 (`src/api_server.py`)
+| 기능 | 설명 |
+|---|---|
+| 멀티 소스 파싱 | PPTX, Draw.io, **이미지(PNG/JPG)** 처리 |
+| IR 컴파일 | 30+ Azure 서비스 + 온프레미스/외부/Naver 분류 |
+| Bicep 에미터 | 엄격한 차단(Strict Suppression) 정책 |
+| Policy 허용 목록 | allowedCategories 기반 코드 생성 통제 |
+| Drift 탐지 | 묵시적 리소스 차단 + validation-report.md 경고 |
+| 품질 게이트 | Golden Diff CI, 회귀 테스트, Invalid Input Gate |
+| Web UI | 운영 콘솔 (Bicep 미리보기, Drift 경고, 컴플라이언스 요약) |
 
-이해 대상:
-- Node/Edge/Container/Text/Legend
-- Azure 주요 리소스 + Generic On-prem 요소
+---
 
-출력:
-- `raw-evidence.json`
-- `element-registry.json`
-- `architecture.graph.json`
-- `architecture.ir.json`
-- `unresolved-questions.md`
-- `traceability-matrix.csv`
-- `main.bicep` 또는 Terraform
-- `validation-report.md`
+## 지원 Azure 서비스 (분류 가능)
 
-## 문서 인덱스
-- `docs/ANTIGRAVITY_HANDOFF_2026-07-20.md` ← 최신 인수인계 문서
-- `docs/API_REFERENCE.md` ← API 운영자 레퍼런스
-- `docs/BIG_PICTURE_TRANSITION_PLAN.md`
-- `docs/EMITTER_DRIFT_RCA.md`
-- `docs/OPERATIONS_RELEASE_CHECKLIST.md`
-- `docs/POLICY_ENFORCEMENT_CHECKLIST.md`
-- `docs/PROJECT_KICKOFF.md`
-- `docs/MVP_BACKLOG.md`
-- `docs/SLIDE_TO_WORKSTREAM_MAPPING.md`
+### Tier 1 — Safe
+`azure.virtualNetwork` · `azure.networkSecurityGroup` · `azure.routeTable` · `azure.keyVault` · `azure.storageAccount` · `azure.adlsGen2` · `azure.bastionHost` · `azure.publicIp` · `azure.networkBundle` · `azure.logAnalyticsWorkspace`
 
-## 현재 상태 (2026-07-20 기준)
-운영 베이스라인 달성. 정책 기반 안전 생성 파이프라인 동작 중.
-- QUALITY_GATES=PASS 확인
-- Runner pre-filter authoritative 확정
-- API + UI 정책 가시성 구현 완료
+### Tier 2 — Compute / Data
+`azure.containerApp` · `azure.containerRegistry` · `azure.aksCluster` · `azure.loadBalancer` · `azure.applicationGateway` · `azure.redisCache` · `azure.cosmosDb` · `azure.postgresFlexible` · `azure.sqlDatabase` · `azure.databricks` · `azure.cognitiveSearch` · `azure.openAI` · `azure.apiManagement` · `azure.functionApp` · `azure.appService` · `azure.virtualMachine`
 
-## 다음 우선 작업
-- **P0**: `.github/workflows/policy-quality-gates.yml` CI 게이트 활성화 (GitHub 연동 필요)
-- **P1**: golden input 3종으로 run snapshot diff 자동화
-- **P1**: UI knownAllowedCategories 도움말 패널 추가
-- **P2**: emitter 로직 책임 분리 + drift 탐지 자동 경고
+### Tier 3 — Risky / Manual approval
+`azure.firewall` · `azure.avdBundle` · `azure.avdWorkspace` · `azure.avdHostPool` · `azure.ddosProtection` · `azure.privateEndpoint`
 
-자세한 내용은 `docs/ANTIGRAVITY_HANDOFF_2026-07-20.md` 참조.
+### 非Azure (문서화 전용, Bicep 생성 없음)
+`onprem.system` (NH투자, AI LAB 등) · `external.service` (인터넷, MTS 등) · `naver.cloud` (네이버 클라우드)
 
-## 운영 스크립트
-- 품질 게이트 실행: `python scripts/run_policy_quality_gates.py`
-- 릴리즈 증적 패키징: `python scripts/package_release_evidence.py --run-id <run-id>`
-- API 서버 실행: `uvicorn src.api_server:app --reload`
+---
 
-## CI
-- `.github/workflows/policy-quality-gates.yml` — PR 및 main 브랜치 push 시 품질 게이트 자동 실행
+## 빠른 시작
+
+### 1. 의존성 설치
+```bash
+pip install -r requirements.txt
+```
+
+### 2. API 서버 실행
+```bash
+uvicorn src.api_server:app --reload --port 8000
+```
+
+브라우저에서 http://localhost:8000 을 열어 파일을 업로드하세요.
+
+### 3. CLI 직접 실행
+
+#### PPTX
+```bash
+python src/run_pptx_evidence.py \
+  --input "Architecture Diagram to IaC Compiler.pptx" \
+  --allow-category azure.virtualNetwork \
+  --allow-category azure.firewall
+```
+
+#### Draw.io
+```bash
+python src/run_drawio_evidence.py \
+  --input samples/network.drawio \
+  --allow-category azure.networkBundle
+```
+
+#### 이미지 (PNG/JPG)
+```bash
+# GEMINI_API_KEY 환경변수 필요
+$env:GEMINI_API_KEY = "your-api-key"
+
+python src/run_image_evidence.py \
+  --input architecture.png \
+  --allow-category azure.containerApp \
+  --allow-category azure.openAI \
+  --allow-category azure.apiManagement
+```
+
+---
+
+## 이미지 파이프라인 설명
+
+PNG/JPG/WEBP 이미지를 업로드하면:
+
+1. **Gemini Vision** 이 다이어그램을 분석하여 모든 컴포넌트 추출
+2. Azure 리소스 → IR 분류 (30+ 카테고리)
+3. 非Azure 리소스 → `onprem.system` / `external.service` / `naver.cloud` 로 분류, 문서화 전용 처리
+4. 정책 허용 목록에 따라 Bicep 생성 대상 결정 (Strict Suppression)
+5. `main.bicep` + `validation-report.md` + `architecture.ir.json` 산출
+
+```
+GEMINI_API_KEY 환경 변수를 서버에 설정해야 이미지 처리가 동작합니다.
+```
+
+---
+
+## 산출물
+
+각 실행(run)마다 `runs/{run-id}/` 폴더에 다음 산출물이 생성됩니다:
+
+| 파일 | 설명 |
+|---|---|
+| `raw-evidence.json` | 원시 추출 증거 |
+| `architecture.graph.json` | 그래프 재구성 |
+| `architecture.ir.json` | Provider-neutral IR |
+| `main.bicep` | 생성된 Bicep 코드 |
+| `traceability-matrix.csv` | 추적성 매트릭스 |
+| `validation-report.md` | 검증 결과 + Drift 경고 |
+| `iac-readiness-report.md` | IaC 준비도 리포트 |
+| `unresolved-questions.md` | 미해결 질문 목록 |
+| `run-manifest.json` | 실행 메타데이터 + Policy Snapshot |
+
+---
+
+## 품질 게이트
+
+```bash
+python scripts/run_policy_quality_gates.py
+```
+
+3개 단계:
+1. **Policy Regression Suite** — 허용/차단 정책 회귀 테스트
+2. **Invalid Input Gate** — 잘못된 카테고리 입력 거부 확인
+3. **Golden Snapshot Diff Gate** — 동일 입력에서 동일 출력 보장
+
+---
+
+## 아키텍처
+
+```
+입력(PPTX/Draw.io/Image)
+  ↓
+Adapter (PptxAdapter / DrawioAdapter / ImageAdapter[Gemini Vision])
+  ↓
+EvidenceRecords
+  ↓
+Graph Reconstruction
+  ↓
+IR Compiler (30+ Azure 분류 + onprem/external/naver)
+  ↓
+Policy Pre-filter (allowedCategories)
+  ↓
+Bicep Emitter (Strict Suppression + Drift Events)
+  ↓
+Reports (validation-report, traceability, readiness)
+```
+
+---
+
+## 환경 변수
+
+| 변수 | 설명 | 필수 |
+|---|---|---|
+| `GEMINI_API_KEY` | Google Gemini API 키 (이미지 처리용) | 이미지 입력 시 필수 |

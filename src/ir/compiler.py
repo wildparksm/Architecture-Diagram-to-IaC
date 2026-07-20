@@ -5,20 +5,56 @@ import re
 
 
 def _classify_resource(name: str) -> tuple[str, str, str]:
+    """Classify a resource label into (category, provider, deployability).
+
+    provider values:
+      "azure"   — emittable as Bicep/Terraform
+      "onprem"  — on-premises system, document only
+      "external"— external service / internet endpoint, document only
+      "naver"   — Naver Cloud / Naver service, document only
+      "neutral" — unknown / presentation element
+    """
     lowered = name.strip().lower()
     if not lowered:
         return "unknown", "neutral", "DOCUMENTATION_ONLY"
 
+    # ── 1. Non-Azure providers ─────────────────────────────────────────────────
+    # On-premises
+    _ONPREM_HINTS = [
+        "nh투자", "nh securities", "ai lab", "시세", "on-prem", "on premise",
+        "datacenter", "데이터센터", "legacy", "ipsec", "vpn gateway",
+        "naver클라우드", "naver cloud", "naver",
+    ]
+    for hint in _ONPREM_HINTS:
+        if hint in lowered:
+            if "naver" in hint:
+                return "naver.cloud", "naver", "DOCUMENTATION_ONLY"
+            return "onprem.system", "onprem", "DOCUMENTATION_ONLY"
+
+    # External / internet endpoints
+    _EXTERNAL_HINTS = [
+        "mts", "인터넷", "internet", "news", "외부", "external user",
+        "external service", "public internet", "cdn",
+    ]
+    for hint in _EXTERNAL_HINTS:
+        if hint in lowered:
+            return "external.service", "external", "DOCUMENTATION_ONLY"
+
+    # ── 2. Azure bundle shortcuts (multi-resource combos) ─────────────────────
     if "avd workspace / host pool / app group" in lowered:
         return "azure.avdBundle", "azure", "PARTIAL_IAC"
     if "vnet / subnet / nsg / route table" in lowered:
         return "azure.networkBundle", "azure", "PARTIAL_IAC"
 
-    if any(token in lowered for token in ["|", "/", "?"]):
+    # ── 3. Separator heuristic (labels like "A | B" or "A / B" are non-resources)
+    if any(token in lowered for token in ["|", "?"]):
         return "unknown", "neutral", "DOCUMENTATION_ONLY"
 
-    if "resource group" in lowered:
+    # ── 4. Azure Resource Group ────────────────────────────────────────────────
+    if "resource group" in lowered or re.match(r"^rg[-_]", lowered):
         return "azure.resourceGroup", "azure", "DOCUMENTATION_ONLY"
+
+    # ── 5. Networking ─────────────────────────────────────────────────────────
     if lowered in {"vnet", "virtual network"} or " vnet" in lowered or lowered.startswith("vnet "):
         return "azure.virtualNetwork", "azure", "FULL_IAC"
     if lowered == "subnet" or lowered.startswith("subnet "):
@@ -27,18 +63,91 @@ def _classify_resource(name: str) -> tuple[str, str, str]:
         return "azure.networkSecurityGroup", "azure", "FULL_IAC"
     if "route table" in lowered:
         return "azure.routeTable", "azure", "FULL_IAC"
-    if lowered in {"firewall", "azure firewall"}:
+    if "public ip" in lowered or "publicip" in lowered or "pip" == lowered:
+        return "azure.publicIp", "azure", "FULL_IAC"
+    if "bastion" in lowered:
+        return "azure.bastionHost", "azure", "PARTIAL_IAC"
+    if "ddos" in lowered:
+        return "azure.ddosProtection", "azure", "PARTIAL_IAC"
+    if "private dns" in lowered:
+        return "azure.privateDnsZone", "azure", "PARTIAL_IAC"
+    if "private endpoint" in lowered:
+        return "azure.privateEndpoint", "azure", "PARTIAL_IAC"
+    if "dns" in lowered and "private" not in lowered:
+        return "azure.dnsResolver", "azure", "DOCUMENTATION_ONLY"
+
+    # ── 6. Firewall / Security ────────────────────────────────────────────────
+    if lowered in {"firewall", "azure firewall"} or "azure firewall" in lowered:
         return "azure.firewall", "azure", "PARTIAL_IAC"
+    if "firewall policy" in lowered:
+        return "azure.firewallPolicy", "azure", "PARTIAL_IAC"
+    if "appgw" in lowered or "app gateway" in lowered or "application gateway" in lowered or "waf" in lowered or "appgw&waf" in lowered:
+        return "azure.applicationGateway", "azure", "PARTIAL_IAC"
+    if "load balancer" in lowered or "internal lb" in lowered or "ilb" == lowered:
+        return "azure.loadBalancer", "azure", "PARTIAL_IAC"
+
+    # ── 7. Compute ────────────────────────────────────────────────────────────
+    if "container app" in lowered:
+        return "azure.containerApp", "azure", "PARTIAL_IAC"
+    if "acr" in lowered or "container registry" in lowered:
+        return "azure.containerRegistry", "azure", "PARTIAL_IAC"
+    if "aks" in lowered or "kubernetes" in lowered:
+        return "azure.aksCluster", "azure", "PARTIAL_IAC"
+    if "virtual machine" in lowered or "vm" == lowered or lowered.startswith("vm ") or " vm" in lowered:
+        return "azure.virtualMachine", "azure", "PARTIAL_IAC"
+    if "bastion vm" in lowered:
+        return "azure.bastionHost", "azure", "PARTIAL_IAC"
+    if "function app" in lowered or "azure functions" in lowered:
+        return "azure.functionApp", "azure", "PARTIAL_IAC"
+    if "app service" in lowered or "web app" in lowered:
+        return "azure.appService", "azure", "PARTIAL_IAC"
+
+    # ── 8. Data / Storage ─────────────────────────────────────────────────────
+    if "redis" in lowered or "cache for redis" in lowered:
+        return "azure.redisCache", "azure", "PARTIAL_IAC"
+    if "cosmos" in lowered or "cosmosdb" in lowered:
+        return "azure.cosmosDb", "azure", "PARTIAL_IAC"
+    if "postgresql" in lowered or "postgres" in lowered:
+        return "azure.postgresFlexible", "azure", "PARTIAL_IAC"
+    if "sql database" in lowered or "azure sql" in lowered:
+        return "azure.sqlDatabase", "azure", "PARTIAL_IAC"
+    if "databricks" in lowered:
+        return "azure.databricks", "azure", "PARTIAL_IAC"
+    if "adls" in lowered or "data lake" in lowered or "adls gen2" in lowered:
+        return "azure.adlsGen2", "azure", "PARTIAL_IAC"
+    if "storage account" in lowered or "blob storage" in lowered or "files" == lowered:
+        return "azure.storageAccount", "azure", "PARTIAL_IAC"
+
+    # ── 9. AI / Analytics ────────────────────────────────────────────────────
+    if "ai search" in lowered or "cognitive search" in lowered or "search service" in lowered:
+        return "azure.cognitiveSearch", "azure", "PARTIAL_IAC"
+    if "openai" in lowered or "azure openai" in lowered or "aoai" in lowered:
+        return "azure.openAI", "azure", "PARTIAL_IAC"
+    if "ptu" in lowered or "tpm" in lowered:
+        # Azure OpenAI PTU/TPM deployment sub-resources
+        return "azure.openAI", "azure", "PARTIAL_IAC"
+    if "log analytics" in lowered:
+        return "azure.logAnalyticsWorkspace", "azure", "FULL_IAC"
+    if "diagnostic settings" in lowered or "diagnostics" in lowered:
+        return "azure.diagnosticSettings", "azure", "PARTIAL_IAC"
+
+    # ── 10. Integration / Management ─────────────────────────────────────────
+    if "api management" in lowered or "apim" in lowered:
+        return "azure.apiManagement", "azure", "PARTIAL_IAC"
+    if "service bus" in lowered:
+        return "azure.serviceBus", "azure", "PARTIAL_IAC"
+    if "event hub" in lowered:
+        return "azure.eventHub", "azure", "PARTIAL_IAC"
+    if "key vault" in lowered or "keyvault" in lowered:
+        return "azure.keyVault", "azure", "FULL_IAC"
+
+    # ── 11. AVD ───────────────────────────────────────────────────────────────
     if lowered in {"avd workspace", "workspace"}:
         return "azure.avdWorkspace", "azure", "PARTIAL_IAC"
     if "host pool" in lowered:
         return "azure.avdHostPool", "azure", "PARTIAL_IAC"
     if "app group" in lowered:
         return "azure.avdApplicationGroup", "azure", "PARTIAL_IAC"
-    if "log analytics" in lowered:
-        return "azure.logAnalyticsWorkspace", "azure", "FULL_IAC"
-    if "diagnostic settings" in lowered:
-        return "azure.diagnosticSettings", "azure", "PARTIAL_IAC"
 
     return "unknown", "neutral", "DOCUMENTATION_ONLY"
 

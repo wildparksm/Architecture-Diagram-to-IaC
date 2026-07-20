@@ -1,0 +1,41 @@
+name: CI — Policy Quality Gates
+
+on:
+  push:
+    branches: ["main", "develop"]
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  quality-gates:
+    name: Policy Quality Gates
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run policy regression tests
+        run: python -m unittest discover -s tests -p test_policy_regression.py -v
+
+      - name: Run policy invalid input gate
+        run: |
+          python src/run_pptx_evidence.py \
+            --input "Architecture Diagram to IaC Compiler.pptx" \
+            --allow-category azure.notRealCategory; \
+          [ $? -eq 2 ] && echo "invalid-input-gate=PASS" || (echo "invalid-input-gate=FAIL" && exit 1)
+
+      - name: Run golden snapshot diff gate
+        run: python scripts/run_golden_diff.py --verify
+
+      - name: Run full quality gates script
+        run: python scripts/run_policy_quality_gates.py

@@ -91,7 +91,7 @@ def main() -> int:
         or not str(resource.get("category", "")).startswith("azure.")
         or str(resource.get("category", "")) in allowed_categories
     ]
-    emitted_code_locations = emit_bicep(codegen_ir, bicep_path)
+    emitted_code_locations, drift_events = emit_bicep(codegen_ir, bicep_path)
     traceability_rows = build_traceability_rows(records, graph, architecture_ir, questions, emitted_code_locations)
     write_traceability_csv(traceability_path, traceability_rows)
     write_iac_readiness_report(readiness_path, records, graph, architecture_ir)
@@ -155,9 +155,16 @@ def main() -> int:
         validation_lines.append(f"- Records: {len(records)}")
         validation_lines.append(f"- Graph nodes: {len(graph.get('nodes', []))}")
         validation_lines.append(f"- Graph edges: {len(graph.get('edges', []))}")
+        validation_lines.append(f"- IR resources: {len(architecture_ir.get('providerNeutralCore', {}).get('resources', []))}")
         validation_lines.append(f"- Questions: {len(questions)}")
         validation_lines.append("- Required fields: OK")
         validation_lines.append("- Confidence dimensions: OK")
+
+    if drift_events:
+        validation_lines.append("")
+        validation_lines.append("## [WARNING] Policy Drift Detected")
+        for event in drift_events:
+            validation_lines.append(f"- {event}")
 
     validation_path.write_text("\n".join(validation_lines) + "\n", encoding="utf-8")
 

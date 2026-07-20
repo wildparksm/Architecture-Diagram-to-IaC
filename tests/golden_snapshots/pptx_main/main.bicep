@@ -4,45 +4,6 @@ targetScope = 'resourceGroup'
 param location string = resourceGroup().location
 
 @description('Safe subset of recognized Azure resources emitted as scaffold declarations.')
-resource Firewall_publicIp 'Microsoft.Network/publicIPAddresses@2023-11-01' = {
-  name: 'Firewall-pip'
-  location: location
-  sku: {
-    name: 'Standard'
-  }
-  properties: {
-    publicIPAllocationMethod: 'Static'
-  }
-}
-
-resource Firewall_policy 'Microsoft.Network/firewallPolicies@2023-11-01' = {
-  name: 'Firewall-policy'
-  location: location
-  properties: {
-    threatIntelMode: 'Alert'
-  }
-}
-
-resource Firewall_vnet 'Microsoft.Network/virtualNetworks@2023-11-01' = {
-  name: 'Firewall-vnet'
-  location: location
-  properties: {
-    addressSpace: {
-      addressPrefixes: [
-        '10.10.0.0/16'
-      ]
-    }
-    subnets: [
-      {
-        name: 'AzureFirewallSubnet'
-        properties: {
-          addressPrefix: '10.10.0.0/24'
-        }
-      }
-    ]
-  }
-}
-
 resource Firewall 'Microsoft.Network/azureFirewalls@2023-11-01' = {
   name: 'Firewall'
   location: location
@@ -64,83 +25,7 @@ resource Firewall 'Microsoft.Network/azureFirewalls@2023-11-01' = {
   }
 }
 
-resource VNet_Subnet_NSG_Route_Table_nsg 'Microsoft.Network/networkSecurityGroups@2023-11-01' = {
-  name: 'VNet--Subnet--NSG--Route-Table-nsg'
-  location: location
-  properties: {}
-}
-
-resource VNet_Subnet_NSG_Route_Table_routeTable 'Microsoft.Network/routeTables@2023-11-01' = {
-  name: 'VNet--Subnet--NSG--Route-Table-rt'
-  location: location
-  properties: {
-    disableBgpRoutePropagation: false
-    routes: []
-  }
-}
-
-resource VNet_Subnet_NSG_Route_Table_vnet 'Microsoft.Network/virtualNetworks@2023-11-01' = {
-  name: 'VNet--Subnet--NSG--Route-Table-vnet'
-  location: location
-  properties: {
-    addressSpace: {
-      addressPrefixes: [
-        '10.0.0.0/16'
-      ]
-    }
-    subnets: [
-      {
-        name: 'VNet--Subnet--NSG--Route-Table-subnet'
-        properties: {
-          addressPrefix: '10.0.0.0/24'
-          networkSecurityGroup: { id: VNet_Subnet_NSG_Route_Table_nsg.id }
-          routeTable: { id: VNet_Subnet_NSG_Route_Table_routeTable.id }
-        }
-      }
-    ]
-  }
-}
-
 var VNet_Subnet_NSG_Route_Table_subnet = VNet_Subnet_NSG_Route_Table_vnet.properties.subnets[0].name
-
-resource Azure_Firewall_publicIp 'Microsoft.Network/publicIPAddresses@2023-11-01' = {
-  name: 'Azure-Firewall-pip'
-  location: location
-  sku: {
-    name: 'Standard'
-  }
-  properties: {
-    publicIPAllocationMethod: 'Static'
-  }
-}
-
-resource Azure_Firewall_policy 'Microsoft.Network/firewallPolicies@2023-11-01' = {
-  name: 'Azure-Firewall-policy'
-  location: location
-  properties: {
-    threatIntelMode: 'Alert'
-  }
-}
-
-resource Azure_Firewall_vnet 'Microsoft.Network/virtualNetworks@2023-11-01' = {
-  name: 'Azure-Firewall-vnet'
-  location: location
-  properties: {
-    addressSpace: {
-      addressPrefixes: [
-        '10.10.0.0/16'
-      ]
-    }
-    subnets: [
-      {
-        name: 'AzureFirewallSubnet'
-        properties: {
-          addressPrefix: '10.10.0.0/24'
-        }
-      }
-    ]
-  }
-}
 
 resource Azure_Firewall 'Microsoft.Network/azureFirewalls@2023-11-01' = {
   name: 'Azure-Firewall'
@@ -489,8 +374,8 @@ var inferredResources = [
     symbolicName: 'External_User'
     name: 'External-User'
     id: 'ev-e06acf93a87273a7'
-    category: 'unknown'
-    provider: 'neutral'
+    category: 'external.service'
+    provider: 'external'
     deployability: 'DOCUMENTATION_ONLY'
   }
   {
@@ -910,14 +795,6 @@ var inferredResources = [
     deployability: 'DOCUMENTATION_ONLY'
   }
   {
-    symbolicName: 'Log_Analytics_Diagnostic_Settings'
-    name: 'Log-Analytics--Diagnostic-Settings'
-    id: 'ev-872c8b50ea71db02'
-    category: 'unknown'
-    provider: 'neutral'
-    deployability: 'DOCUMENTATION_ONLY'
-  }
-  {
     symbolicName: 'architecture_ir_json'
     name: 'architectureirjson'
     id: 'ev-80f090052a105705'
@@ -958,7 +835,7 @@ var inferredResources = [
     deployability: 'DOCUMENTATION_ONLY'
   }
   {
-    symbolicName: 'resource_100'
+    symbolicName: 'resource_99'
     name: '--'
     id: 'ev-b72eee3125d23ba6'
     category: 'unknown'

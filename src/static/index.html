@@ -263,16 +263,34 @@
     <section class="grid">
       <div class="panel">
         <div class="row">
-          <input id="fileInput" type="file" accept=".pptx,.drawio,.xml" />
+          <input id="fileInput" type="file" accept=".pptx,.drawio,.xml,.png,.jpg,.jpeg,.webp" />
           <button id="uploadBtn">Upload and Run</button>
         </div>
+        <div id="imageNotice" class="allow-note" style="display:none; color: var(--warn);">Image mode: Gemini Vision will extract resources. Ensure GEMINI_API_KEY is set on the server.</div>
         <div class="allow-note">Default is report-only. Select only the categories you want code-generated.</div>
         <div class="allowlist">
           <div class="allow-card"><label><input type="checkbox" class="allowCategory" value="azure.networkBundle" />Network bundle</label></div>
           <div class="allow-card"><label><input type="checkbox" class="allowCategory" value="azure.virtualNetwork" />Virtual network</label></div>
-          <div class="allow-card"><label><input type="checkbox" class="allowCategory" value="azure.networkSecurityGroup" />Network security group</label></div>
+          <div class="allow-card"><label><input type="checkbox" class="allowCategory" value="azure.networkSecurityGroup" />NSG</label></div>
           <div class="allow-card"><label><input type="checkbox" class="allowCategory" value="azure.routeTable" />Route table</label></div>
-          <div class="allow-card"><label><input type="checkbox" class="allowCategory" value="azure.logAnalyticsWorkspace" />Log Analytics workspace</label></div>
+          <div class="allow-card"><label><input type="checkbox" class="allowCategory" value="azure.keyVault" />Key Vault</label></div>
+          <div class="allow-card"><label><input type="checkbox" class="allowCategory" value="azure.storageAccount" />Storage Account</label></div>
+          <div class="allow-card"><label><input type="checkbox" class="allowCategory" value="azure.adlsGen2" />ADLS Gen2</label></div>
+          <div class="allow-card"><label><input type="checkbox" class="allowCategory" value="azure.containerApp" />Container App</label></div>
+          <div class="allow-card"><label><input type="checkbox" class="allowCategory" value="azure.containerRegistry" />Container Registry</label></div>
+          <div class="allow-card"><label><input type="checkbox" class="allowCategory" value="azure.loadBalancer" />Load Balancer</label></div>
+          <div class="allow-card"><label><input type="checkbox" class="allowCategory" value="azure.applicationGateway" />App Gateway / WAF</label></div>
+          <div class="allow-card"><label><input type="checkbox" class="allowCategory" value="azure.redisCache" />Redis Cache</label></div>
+          <div class="allow-card"><label><input type="checkbox" class="allowCategory" value="azure.cosmosDb" />CosmosDB</label></div>
+          <div class="allow-card"><label><input type="checkbox" class="allowCategory" value="azure.postgresFlexible" />PostgreSQL</label></div>
+          <div class="allow-card"><label><input type="checkbox" class="allowCategory" value="azure.databricks" />Databricks</label></div>
+          <div class="allow-card"><label><input type="checkbox" class="allowCategory" value="azure.cognitiveSearch" />AI Search</label></div>
+          <div class="allow-card"><label><input type="checkbox" class="allowCategory" value="azure.openAI" />Azure OpenAI</label></div>
+          <div class="allow-card"><label><input type="checkbox" class="allowCategory" value="azure.apiManagement" />API Management</label></div>
+          <div class="allow-card"><label><input type="checkbox" class="allowCategory" value="azure.bastionHost" />Bastion Host</label></div>
+          <div class="allow-card"><label><input type="checkbox" class="allowCategory" value="azure.firewall" />Azure Firewall</label></div>
+          <div class="allow-card"><label><input type="checkbox" class="allowCategory" value="azure.logAnalyticsWorkspace" />Log Analytics</label></div>
+          <div class="allow-card"><label><input type="checkbox" class="allowCategory" value="azure.avdBundle" />AVD bundle</label></div>
         </div>
         <input id="advancedAllowCategories" class="advanced-allow" type="text" placeholder="Advanced: comma-separated categories (optional)" />
         <details class="allow-note" style="margin-top: 10px; cursor: pointer;">
@@ -292,6 +310,20 @@
       <div class="panel">
         <strong>Artifacts</strong>
         <div id="artifacts" class="artifacts"></div>
+      </div>
+
+      <div class="panel" id="driftPanel" style="display:none; border-color: var(--warn);">
+        <strong style="color:var(--warn);">&#9888; Policy Drift Detected</strong>
+        <div class="allow-note" style="margin-top:6px;">The following implicit resources were suppressed because they were not in your allowlist:</div>
+        <ul id="driftList" style="margin:8px 0 0 0; padding-left:18px; font-size:0.88rem; color:var(--warn);"></ul>
+      </div>
+
+      <div class="panel" id="bicepPreviewPanel" style="display:none;">
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <strong>Bicep Preview</strong>
+          <button id="bicepDownloadBtn" style="font-size:0.8rem; padding:4px 10px;">Download main.bicep</button>
+        </div>
+        <pre id="bicepPreview" style="margin-top:10px; max-height:400px; overflow:auto; font-size:0.78rem; color:#b3e5fc;"></pre>
       </div>
 
       <div class="panel">
@@ -314,6 +346,7 @@
           <div class="summary-item"><div class="k">Azure Resources in IR</div><div class="v" id="summaryAzureTotal">-</div></div>
           <div class="summary-item"><div class="k">Allowlisted (eligible)</div><div class="v" id="summaryEligible">-</div></div>
           <div class="summary-item"><div class="k">Policy-suppressed</div><div class="v" id="summarySuppressed">-</div></div>
+          <div class="summary-item"><div class="k">Non-Azure (onprem/ext)</div><div class="v" id="summaryNonAzure">-</div></div>
         </div>
       </div>
 
@@ -351,6 +384,7 @@
     const summaryAzureTotalEl = document.getElementById('summaryAzureTotal');
     const summaryEligibleEl = document.getElementById('summaryEligible');
     const summarySuppressedEl = document.getElementById('summarySuppressed');
+    const summaryNonAzureEl = document.getElementById('summaryNonAzure');
     const policyRequestedEl = document.getElementById('policyRequested');
     const policyEffectiveEl = document.getElementById('policyEffective');
     const runtimePlatformEl = document.getElementById('runtimePlatform');
@@ -358,11 +392,26 @@
     const runtimeEmitterHashEl = document.getElementById('runtimeEmitterHash');
     const runtimePolicyHashEl = document.getElementById('runtimePolicyHash');
     const knownCategoriesListEl = document.getElementById('knownCategoriesList');
+    const imageNoticeEl = document.getElementById('imageNotice');
+    const driftPanelEl = document.getElementById('driftPanel');
+    const driftListEl = document.getElementById('driftList');
+    const bicepPreviewPanelEl = document.getElementById('bicepPreviewPanel');
+    const bicepPreviewEl = document.getElementById('bicepPreview');
+    const bicepDownloadBtnEl = document.getElementById('bicepDownloadBtn');
 
     let pollTimer = null;
     const timelineEvents = [];
     let summarizedRunId = '';
     const knownAllowedCategories = new Set();
+
+    // Show/hide image notice based on selected file type
+    fileInput.addEventListener('change', () => {
+      const file = fileInput.files && fileInput.files[0];
+      if (!file) { imageNoticeEl.style.display = 'none'; return; }
+      const ext = file.name.split('.').pop().toLowerCase();
+      const isImage = ['png','jpg','jpeg','webp'].includes(ext);
+      imageNoticeEl.style.display = isImage ? 'block' : 'none';
+    });
 
     function pushTimeline(text) {
       timelineEvents.unshift(text);
@@ -504,9 +553,9 @@
       try {
         const ir = await fetchArtifactJson(job.runId, 'architecture.ir.json');
         const resources = ir?.providerNeutralCore?.resources;
-        const azureResources = Array.isArray(resources)
-          ? resources.filter((item) => item && typeof item === 'object' && String(item.category || '').startsWith('azure.'))
-          : [];
+        const allResources = Array.isArray(resources) ? resources : [];
+        const azureResources = allResources.filter((item) => item && typeof item === 'object' && String(item.category || '').startsWith('azure.'));
+        const nonAzureResources = allResources.filter((item) => item && typeof item === 'object' && !String(item.category || '').startsWith('azure.') && item.provider !== 'neutral');
 
         const allowedSet = new Set(categories);
         const eligible = azureResources.filter((item) => allowedSet.has(String(item.category || ''))).length;
@@ -515,13 +564,50 @@
         summaryAzureTotalEl.textContent = String(azureResources.length);
         summaryEligibleEl.textContent = String(eligible);
         summarySuppressedEl.textContent = String(suppressed);
+        summaryNonAzureEl.textContent = String(nonAzureResources.length);
         complianceNoteEl.textContent = `Computed from architecture.ir.json (${job.runId}).`;
         summarizedRunId = job.runId;
+
+        // Render Bicep preview
+        try {
+          const bicepUrl = `/api/v1/runs/${encodeURIComponent(job.runId)}/artifacts/main.bicep`;
+          const bicepRes = await fetch(bicepUrl);
+          if (bicepRes.ok) {
+            const bicepText = await bicepRes.text();
+            bicepPreviewEl.textContent = bicepText.length > 8000 ? bicepText.slice(0, 8000) + '\n... (truncated, download for full file)' : bicepText;
+            bicepPreviewPanelEl.style.display = 'block';
+            bicepDownloadBtnEl.onclick = () => { window.open(bicepUrl, '_blank'); };
+          }
+        } catch (_) { /* bicep preview is optional */ }
+
+        // Render drift warnings from validation-report.md
+        try {
+          const valUrl = `/api/v1/runs/${encodeURIComponent(job.runId)}/artifacts/validation-report.md`;
+          const valRes = await fetch(valUrl);
+          if (valRes.ok) {
+            const valText = await valRes.text();
+            const driftSection = valText.match(/## \[WARNING\] Policy Drift Detected\n([\s\S]*?)(?=\n##|$)/);
+            if (driftSection) {
+              const driftLines = driftSection[1].split('\n').filter(l => l.startsWith('- ')).map(l => l.slice(2));
+              driftListEl.innerHTML = '';
+              driftLines.forEach(line => {
+                const li = document.createElement('li');
+                li.textContent = line;
+                driftListEl.appendChild(li);
+              });
+              driftPanelEl.style.display = 'block';
+            } else {
+              driftPanelEl.style.display = 'none';
+            }
+          }
+        } catch (_) { /* drift panel is optional */ }
+
       } catch (err) {
         complianceNoteEl.textContent = `Could not compute summary: ${err.message}`;
         summaryAzureTotalEl.textContent = '-';
         summaryEligibleEl.textContent = '-';
         summarySuppressedEl.textContent = '-';
+        summaryNonAzureEl.textContent = '-';
       }
     }
 
@@ -589,6 +675,9 @@
       summaryAzureTotalEl.textContent = '-';
       summaryEligibleEl.textContent = '-';
       summarySuppressedEl.textContent = '-';
+      summaryNonAzureEl.textContent = '-';
+      driftPanelEl.style.display = 'none';
+      bicepPreviewPanelEl.style.display = 'none';
       policyRequestedEl.textContent = '-';
       policyEffectiveEl.textContent = '-';
       runtimePlatformEl.textContent = '-';
