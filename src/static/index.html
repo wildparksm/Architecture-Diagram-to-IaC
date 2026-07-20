@@ -275,6 +275,10 @@
           <div class="allow-card"><label><input type="checkbox" class="allowCategory" value="azure.logAnalyticsWorkspace" />Log Analytics workspace</label></div>
         </div>
         <input id="advancedAllowCategories" class="advanced-allow" type="text" placeholder="Advanced: comma-separated categories (optional)" />
+        <details class="allow-note" style="margin-top: 10px; cursor: pointer;">
+          <summary>View all known allowed categories</summary>
+          <div id="knownCategoriesList" style="margin-top: 8px; display: flex; flex-wrap: wrap; gap: 6px;"></div>
+        </details>
         <div id="statusText" class="status">Idle</div>
         <div class="kv">
           <div class="k">Job ID</div><div id="jobId">-</div>
@@ -353,6 +357,7 @@
     const runtimeRunnerHashEl = document.getElementById('runtimeRunnerHash');
     const runtimeEmitterHashEl = document.getElementById('runtimeEmitterHash');
     const runtimePolicyHashEl = document.getElementById('runtimePolicyHash');
+    const knownCategoriesListEl = document.getElementById('knownCategoriesList');
 
     let pollTimer = null;
     const timelineEvents = [];
@@ -407,11 +412,18 @@
         enforcementBadgeEl.textContent = `Enforcement: ${mode} @ ${location}`;
 
         knownAllowedCategories.clear();
+        knownCategoriesListEl.innerHTML = '';
         const known = Array.isArray(payload.knownAllowedCategories) ? payload.knownAllowedCategories : [];
         known
           .map((value) => String(value || '').trim())
           .filter(Boolean)
-          .forEach((value) => knownAllowedCategories.add(value));
+          .forEach((value) => {
+            knownAllowedCategories.add(value);
+            const badge = document.createElement('div');
+            badge.className = 'badge';
+            badge.textContent = value;
+            knownCategoriesListEl.appendChild(badge);
+          });
       } catch (err) {
         healthBadgeEl.textContent = 'Health: unavailable';
         enforcementBadgeEl.textContent = `Enforcement: unknown (${err.message})`;
