@@ -73,6 +73,25 @@ def main() -> int:
         failures += 1
 
     if failures == 0:
+        print("\n== Golden Snapshot Diff Gate ==")
+        diff_result = subprocess.run(
+            [sys.executable, "scripts/run_golden_diff.py", "--verify"],
+            cwd=str(ROOT_DIR),
+            capture_output=True,
+            text=True,
+            encoding="utf-8",
+            errors="replace",
+        )
+        if diff_result.stdout:
+            print(diff_result.stdout.rstrip())
+        if diff_result.stderr:
+            print(diff_result.stderr.rstrip(), file=sys.stderr)
+        print(f"exit={diff_result.returncode}")
+        
+        if diff_result.returncode != 0:
+            failures += 1
+
+    if failures == 0:
         print("\nQUALITY_GATES=PASS")
         return 0
 

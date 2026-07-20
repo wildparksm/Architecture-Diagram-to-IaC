@@ -1,0 +1,79 @@
+{
+  "version": "architecture-ir/0.1.0",
+  "providerNeutralCore": {
+    "resources": [
+      {
+        "id": "ev-261dfa7e00b5d765",
+        "name": "Web",
+        "category": "unknown",
+        "provider": "neutral",
+        "deployability": "DOCUMENTATION_ONLY",
+        "evidenceLinks": [
+          "ev-261dfa7e00b5d765"
+        ],
+        "confidence": {
+          "existence": 1.0,
+          "text": 0.9,
+          "classification": 0.2,
+          "containment": 0.5,
+          "connectivity": 0.3,
+          "deployability": 0.2
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "id": "ev-d251a875e566d6df",
+        "from": "ev-261dfa7e00b5d765",
+        "to": "ev-7e75f86bfe7444c4",
+        "kind": "dependency",
+        "evidenceLinks": [
+          "ev-d251a875e566d6df"
+        ],
+        "confidence": 0.2
+      }
+    ],
+    "containers": [],
+    "securityControls": [],
+    "existingResources": [],
+    "manualControls": [],
+    "assumptions": [],
+    "questions": [
+      {
+        "type": "Risk",
+        "code": "LOW_EDGE_CONFIDENCE",
+        "scope": "ev-d251a875e566d6df",
+        "message": "Connector endpoint resolution has low confidence and needs review.",
+        "lifecycle": "Detected"
+      }
+    ],
+    "warnings": [],
+    "targetCapabilities": {
+      "azureBicep": true,
+      "terraformAzureRM": true,
+      "multiCloud": "candidate",
+      "onPremAutomation": "partial"
+    }
+  },
+  "providerExtensions": {
+    "azure": {},
+    "aws": {},
+    "gcp": {},
+    "vmware": {},
+    "kubernetes": {},
+    "customUnknown": {}
+  },
+  "readiness": {
+    "draft": true,
+    "validated": false,
+    "productionReady": true,
+    "openBlockerCount": 0,
+    "openRiskCount": 1,
+    "gateReasons": []
+  },
+  "codegenPolicy": {
+    "allowedCategories": [
+      "azure.networkBundle"
+    ]
+  }
+}
