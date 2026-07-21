@@ -1,21 +1,34 @@
 """run_image_evidence.py — Pipeline runner for PNG/JPG architecture diagram inputs.
 
-Uses Gemini Vision (via ImageAdapter) to extract evidence, then runs the same
-IR compile → Bicep emit → reports pipeline as the PPTX and Draw.io runners.
+Azure OpenAI GPT-4o Vision (기본값) 또는 Gemini Vision을 사용하여 아키텍처 다이어그램에서
+리소스를 추출하고, 기존 PPTX/Draw.io 파이프라인과 동일한 방식으로 처리합니다.
 
 Usage:
     python src/run_image_evidence.py --input diagram.png [--allow-category azure.virtualNetwork ...]
 
-Environment:
-    GEMINI_API_KEY  — Google AI Studio / Vertex AI API key
+Environment (.env 파일 또는 시스템 환경변수):
+    VLM_PROVIDER              = azure (기본값) | gemini
+    AZURE_OPENAI_ENDPOINT     = https://your-resource.openai.azure.com/
+    AZURE_OPENAI_API_KEY      = your-api-key
+    AZURE_OPENAI_DEPLOYMENT   = gpt-4o
+    AZURE_OPENAI_API_VERSION  = 2025-01-01-preview
+    GEMINI_API_KEY            = (VLM_PROVIDER=gemini 사용 시)
 """
 from __future__ import annotations
+
+# .env 파일 자동 로드 (python-dotenv)
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    pass  # dotenv 없어도 시스템 환경변수로 동작
 
 from copy import deepcopy
 from datetime import datetime, timezone
 from pathlib import Path
 import argparse
 import hashlib
+import os
 import platform
 import sys
 
@@ -137,7 +150,8 @@ def main() -> int:
             "timestampUtc": datetime.now(timezone.utc).isoformat(),
             "inputFile": str(input_path),
             "sourceType": "image",
-            "vlmModel": "gemini-1.5-flash",
+            "vlmProvider": os.environ.get("VLM_PROVIDER", "azure"),
+            "vlmModel": os.environ.get("AZURE_OPENAI_DEPLOYMENT", "gpt-4o") if os.environ.get("VLM_PROVIDER", "azure") == "azure" else "gemini-1.5-flash",
             "recordCount": len(records),
             "graphNodeCount": len(graph.get("nodes", [])),
             "graphEdgeCount": len(graph.get("edges", [])),
