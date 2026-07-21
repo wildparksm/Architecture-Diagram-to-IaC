@@ -45,7 +45,7 @@ def build_graph(records: List[Dict[str, object]]) -> Dict[str, object]:
     edges: List[Dict[str, object]] = []
     questions: List[Dict[str, object]] = []
 
-    shape_records = [r for r in records if r.get("kind") == "shape"]
+    shape_records = [r for r in records if r.get("kind") in ("shape", "resource", "boundary")]
     connector_records = [r for r in records if r.get("kind") == "connector"]
 
     for rec in shape_records:

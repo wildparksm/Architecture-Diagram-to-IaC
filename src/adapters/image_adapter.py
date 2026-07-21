@@ -129,14 +129,12 @@ def _extract_azure(image_path: Path) -> List[Dict[str, str]]:
                         "type": "image_url",
                         "image_url": {
                             "url": f"data:{mime_type};base64,{b64_data}",
-                            "detail": "high",  # 고해상도 분석
                         },
                     },
                 ],
             }
         ],
-        max_tokens=4096,
-        temperature=0,  # 결정적 출력 (재현 가능성)
+        max_completion_tokens=4096,
     )
 
     text = response.choices[0].message.content or ""
